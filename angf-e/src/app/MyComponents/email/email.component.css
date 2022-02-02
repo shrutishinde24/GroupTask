@@ -1,0 +1,86 @@
+.yas{
+
+    background-color: grey;
+}
+h4 {
+    text-align: left;
+    font-weight: 2px;
+    font-size: 18px;
+    
+    }
+    
+   
+    
+    input[type=text], select, textarea {
+    width: 102%;
+    padding-left: -25px;
+    padding-right: 100px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+    margin-top: 20px;
+   margin-bottom: 15px;
+    resize: vertical;
+    border: none;
+    border-bottom: 1px solid black;
+    }
+    
+    
+    
+    .left {
+        position: relative;
+        top: 10;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-left:10px;
+        box-sizing: border-box;
+        padding: 40px;
+        padding-top:10px;
+        width: 100%;
+        
+        margin: left 40PX;
+        flex-direction: row;
+        }
+    input[type=attach]{
+    width: 35%;
+    
+    padding-right: 25px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    resize: vertical;
+    margin-left: -67px;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: left;
+    
+    
+    
+    }
+    
+    
+    
+    input[type=submit] {
+    background-color: #04AA6D;
+    padding: 1px 18px;
+    padding-top: 5px;
+    cursor: pointer;
+    border:none;color:white;
+    
+    }
+    input[type=reset] {
+        background-color: #04AA6D;
+        padding: 1px 18px;
+        padding-top: 5px;
+        cursor: pointer;
+        border:none;color:white;
+        
+        }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+      .button{
+          margin-top: 40px;
+          margin-right: -43px;
+      }

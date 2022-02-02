@@ -1,0 +1,16 @@
+<div style="margin-top: 5%;margin-left: 9%;" class="container">
+<form (ngSubmit)="submit()" ngNativeValidate>
+    <div class="form-group"style="font-size:18px;">
+      <label for="lob">Category Name</label>
+      <input type="text" required class="form-control" id="lob" name="lob" [(ngModel)]="lob">
+    </div>
+    <div class="form-group" style="font-size:18px;">
+      <label for="cre">Created By</label>
+      <input type="text" required="true" class="form-control" id="cre" name="cre" [(ngModel)]="cre" >
+    </div>
+  
+    <button style="font-size:18px;width: 80px; height: 35px; background-color: #3399ff; border:none;color:white;" type="submit">Submit</button>
+    &nbsp;
+    <button routerLink="/Lobcat" type="button" style="font-size:18px;width: 80px; height: 35px; background-color: #3399ff; border:none;color:white;">Back</button>
+  </form>
+  </div>

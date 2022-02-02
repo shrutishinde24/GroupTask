@@ -1,0 +1,51 @@
+  
+.yashu{
+
+    background-color: grey;
+    
+}
+h4 {
+    text-align: left;
+    font-weight: 2px;
+    font-size: 18px;
+    
+    }
+    
+    #login-boxes {
+    position: relative;
+    padding: 10px;
+    margin: 10% auto;
+    margin-top: 10px;
+    margin-left: 140px;
+    padding-top: 5px;
+    margin-top: 20px;
+    
+   
+    margin-top: 10px;
+    margin: bottom 70px;
+    height: 1200px;
+    
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+    }
+    .card-bodys{
+        padding-top:15px;
+    }
+    .side{
+        padding-bottom: 500px;
+        margin-top: -28px;
+        padding-left: 375px;
+        
+ 
+    }
+    .custom-select{
+        margin-top: 550px;
+        padding-right: auto;
+    }
+.form-check-input
+{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}

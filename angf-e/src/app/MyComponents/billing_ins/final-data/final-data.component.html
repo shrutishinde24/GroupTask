@@ -1,0 +1,48 @@
+<div>
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 200%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+
+</style>
+<p style="padding-left:1%;"><b>Invoice Delivery Instruction</b></p>
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Instruction level</th>
+      <th>Epic Agency Code</th>
+      <th>Site ID</th>
+      <th>Contact name</th>
+      <th>GLOB</th>
+      <th>Descrption</th>
+      <th>Updated by</th>
+      <th>Action</th>
+      
+    </tr>
+    <tbody *ngFor="let x of item.client_inv_del.$values">
+        <tr>
+            <td>{{x.inv_delivery.instr_level}}</td>
+            <td>{{x.inv_delivery.agency_code}}</td>
+            <td>{{x.inv_delivery.s_id}}</td>
+            <td>{{x.inv_delivery.contact_name}}</td>
+            <td>{{x.inv_delivery.glob}}</td>
+            <td>{{x.inv_delivery.desc}}</td>
+            <td>{{x.inv_delivery.updated_by}}</td>
+            
+            <td> <a href="#" [routerLink]="['/Lobcat/',  'view']" > <i style="color: black;" class="fas fa-eye"></i></a>&nbsp;|&nbsp;<a href="#" [routerLink]="['/Lobcat/',  'edit']" > <i style="color: black;" class="fas fa-edit"></i></a>&nbsp;|&nbsp;<a  > <i class="fas fa-trash-alt"></i></a></td>
+            
+          </tr>
+    </tbody>
+    
+    
+  </table>
+</div>

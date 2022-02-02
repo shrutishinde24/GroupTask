@@ -1,0 +1,98 @@
+<div style="margin-top: 5%;">
+	<div class="main_container">
+		<div style="background: #dedede;
+		color: grey;
+		font-weight: 0;
+		font-size: 30px;
+		line-height: 18px;
+		margin-top: 65px;
+		margin-left: 8%;
+		padding: 20px;
+		padding-top: 5px;
+		margin-right: 0px;
+		background-color: white;">
+		Global Lines Of Business
+		</div>
+	  </div>
+	  <div class="body_container">
+		<div style="margin-left: 100px;
+		margin-right: 0px;
+		background-color: #f0f0f0;
+		margin-bottom: 0px;
+		padding-bottom: -32%;
+		text-align: left;
+		padding-left: 30px;
+		padding-top: 20px;
+		padding-right: 15px;
+		font-size: 15px;
+		line-height: 20pt;
+	  ">
+			<div class="card">
+				<div class="card-header" style="margin:20px;margin-bottom: 10px;background-color: white;">
+				  <b style="font-size: 18px;">Add/ Edit Global Lines Of Business</b>
+				</div>
+					<div style="padding: 10px;margin-left: 14px;margin-top: 1.5%;padding-bottom:3%;background-color: white;">
+						<div class="card-body">							
+							<input type="text" placeholder="Global Lines Of Business" style="all:unset;width:230px;font-size: 18px;margin-left:30px;border: none; border-bottom: 2px solid grey;">	
+								<select style="all:unset; margin-left:60px; width:80px; border-bottom:2px solid grey; font-weight:0;font-size:18px;color:grey" >
+									<option value="Status"style="font-weight:0; font-color:grey;">Status</option>
+  									<option value="Active">Active</option>
+  									<option value="InActive">InActive</option>
+								</select>
+							<input routerLink="/Lobcat/create" type="button" value="Add" id="add" style="margin-left:30px; width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;;font-size:18px;">
+							<input type="button" value="Clear" id="clr" style="margin-left:15px; width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;font-size:18px;">									
+						</div>
+					</div>								
+			</div>
+			<div style="margin-top: 3%;font-size:18px;" class="card">	
+				 
+					<div style="padding: 10px;margin-left: 14px;margin-top: 3%;">
+						<div class="card-body">
+							
+							<table class="table">
+								<thead>
+								  <tr>
+									<th scope="col" >Sr</th>
+									<th scope="col" >Global Lines Of Business</th>
+									<th scope="col" >Status</th>
+									<th scope="col" >Action</th>
+								  </tr>
+								</thead>
+								
+								<tbody *ngFor="let item of homels.$values">
+									
+								  <tr>
+									<td scope="row"><b> {{item.id}}</b></td>
+									<td>{{item.lobCategoryName}}</td>
+									<td>
+									<div *ngIf="item.isActive==true else templateName">
+										Active
+									</div>
+									
+									<ng-template #templateName>
+										In-Active
+									</ng-template>
+									</td>
+									<td> <a href="#" [routerLink]="['/Lobcat/', item.id, 'view']" > <i style="color: black;" class="fas fa-eye"></i></a>&nbsp;|&nbsp;<a href="#" [routerLink]="['/Lobcat/', item.id, 'edit']" > <i style="color: black;" class="fas fa-edit"></i></a>&nbsp;|&nbsp;<a (click)="deletelob(item.id)" > <i class="fas fa-trash-alt"></i></a></td>
+								  </tr>				  
+								</tbody>								
+							  </table>		
+							</div>
+						</div>
+					</div>
+					<div style="padding-top: 5%;">
+						<div class="card" >
+						<div class="card-header" style="margin:10px; margin-top: 10px ;margin-bottom: 10px;">
+							 <div style="padding:10px;margin-left: 358px;margin-top: 0%;">
+								<div class="card-body">
+									<input routerLink="/email-template" type="button" value="Email" id="add" style="margin-left:60px; width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;font-size:18px;">
+									<input routerLink="/Lobcat/policy" type="button" value="Policy" id="add" style="margin-left:50px; width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;font-size:18px;">
+								 </div>
+								</div>
+							</div>
+						 </div>
+						 </div>
+				  </div>
+			</div>
+			
+		  </div>	
