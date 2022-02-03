@@ -36,17 +36,16 @@
   
   <form (ngSubmit)="onSubmit()" class="card-body" >
  
-    <input type="text" id="c_name" name="c_name" [(ngModel)]="c_name" placeholder="Client" style="width: 70%;border:none;border-bottom: 1px solid grey;">
+    <input type="text" id="c_name" name="c_name" [(ngModel)]="c_name" placeholder="Client" style="width: 70%;border-top: 20px;border-bottom: 1px solid grey;">
 
 
   <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-left: 30px;width: 40px;margin-top: -5px;border: none;background-color: white;color: black">
     <i class="fas fa-search" ></i>
   </button>
-    
-  <p style="margin-top: 25px;"><b>Please select client or Epic lookup code</b></p>
-  <div *ngIf="item!=null; else elseBlock"><input routerLink="/billing-instructions"  type="button" value="Add" id="add" style="margin-left:60px; width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;font-size:18px;" ></div>
+  <div *ngIf="item!=null; else elseBlock"><button class="btn btn-primary" type="button" [routerLink]="['/billing-instructions']">Add</button></div>
 <ng-template #elseBlock></ng-template>
-
+  
+  <p style="margin-top: 25px;"><b>select client or Epic lookup code</b></p>
 
   </form>
   <div *ngIf="item!=null; else elseBlock"><app-final-data [item]="item"></app-final-data></div>
@@ -89,10 +88,10 @@
                   
                    
             </table>
-            <label for="cars" style="text-align: center;margin-top: 75px;margin-left:-100px;">Items per page:</label>
+            <!--<label for="cars" style="text-align: center;margin-top: 75px;margin-left:-100px;">Items per page:</label>-->
              
             
-            <select id="cars" style="all:unset; margin-left:260px; width:80px; border-bottom:2px solid grey;margin-top: -32px; font-weight:0; color:grey;" >
+            <!--<select id="cars" style="all:unset; margin-left:260px; width:80px; border-bottom:2px solid grey;margin-top: -32px; font-weight:0; color:grey;" >
                 <option value="5"style="font-weight:0; font-color:grey;">5</option>
                   <option value="4">4</option>
                   <option value="3">3</option>
@@ -101,12 +100,12 @@
                   <option value="0">0</option>
               
                   
-            </select>
+            </select>-->
             
 
             <div class="modal-footer" style="margin-top: 130px;">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" (click)="loading(obj.id)"  data-dismiss="modal">Select</button>
+              <button type="submit" class="btn btn-primary" (click)="loading(obj.id)"  data-dismiss="modal">Select  </button>
 
             </div>
           </div>

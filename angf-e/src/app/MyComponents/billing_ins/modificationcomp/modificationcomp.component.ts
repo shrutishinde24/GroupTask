@@ -11,49 +11,34 @@ import { ClientApiService } from 'src/app/Services/client-api.service';
   styleUrls: ['./modificationcomp.component.css']
 })
 export class ModificationcompComponent implements OnInit {
-  modi!:modification
-  @Input() acc!:string
-  @Input() body!:string
-  @Input() glo!:string
+  @Input() item!:any;
+  instr_level!:string
+  desc!:string
+  contact_name!:string
   id!:number
-  @Input() email!:string
-
-  
-  constructor(public service: NetApiService,
-    private router: Router) { }
+  constructor(public service: ClientApiService,private router: Router) { }
 
   ngOnInit(): void {
   }
   submit(){
-    const modi={
-      instr_level: '',
-      agency_code: this.acc,
-      s_id: 1,
-      contact_name : '',
-      glob : '',
-      desc : this.body,
-      updated_by : '',
-      updated_on : '',
-      client_inv_del: ''
+    var data={
+      instr_level:this.instr_level,
+      agency_code:'At5H7',
+      s_id:'909',
+      contact_name:this.contact_name,
+      glob:'OTHERS',
+      desc:this.desc,
+      updated_by:'User Test',
+      updated_on:null,
+      client_inv_del:null
     }
-    console.log(modi)
-    this.service.inv_addpost(modi).subscribe(res => {
-         console.log('Post created successfully!');
-         this.router.navigateByUrl('billing-instruction');
-  })
-
+    console.log(data)
+    this.id=this.item.id
+    this.service.clientmeta(this.id,data).subscribe(res=>{
+      
+      console.log(data,this.id);
+      this.router.navigateByUrl('billing-instruction');
+    })
   }
-}
-
-
-interface modification {
-  instr_level: string;
-  agency_code: string;
-  s_id: number;
-  contact_name : string;
-  glob : string;
-  desc : string;
-  updated_by : string;
-  updated_on : string;
-  client_inv_del: string;
+  
 }

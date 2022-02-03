@@ -1,4 +1,14 @@
 <div>
+  
+  <!-- <p>{{item.id}}</p>
+  <p>{{item.client_name}}</p>
+  <p>{{item.code}}</p> -->
+  
+
+           
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 table {
   border-collapse: collapse;
@@ -14,7 +24,11 @@ th, td {
 
 
 </style>
-<p style="padding-left:1%;"><b>Invoice Delivery Instruction</b></p>
+</head>
+<body>
+
+
+
 <div style="overflow-x:auto;">
   <table>
     <tr>
@@ -46,3 +60,4 @@ th, td {
     
   </table>
 </div>
+  <app-modificationcomp [item]="item"></app-modificationcomp>

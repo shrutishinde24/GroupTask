@@ -22,4 +22,7 @@ export class ClientApiService {
   getclientbyid(id:number):Observable<any>{
     return this.http.get(this.netapiUrl+`/api/Clients/${id}`)
   }
+  clientmeta(id:number,data:any){
+    return this.http.put(this.netapiUrl+`/api/Clients/${id}`,data);
+  }
 }

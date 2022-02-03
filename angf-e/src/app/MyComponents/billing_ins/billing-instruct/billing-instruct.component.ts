@@ -14,8 +14,10 @@ export class BillingInstructComponent implements OnInit {
   obj!:any
   item!:any
   cli_li:any=[]
-    c_name!:string
-    constructor(public service: ClientApiService,
+  items = ['Carrots', 'Tomatoes', 'Onions', 'Apples', 'Avocados'];
+  c_name!:string
+  basket = [''];
+  constructor(public service: ClientApiService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -34,6 +36,9 @@ export class BillingInstructComponent implements OnInit {
     this.obj=this.cli_li.$values.find((z: { client_name: string; })=>z.client_name==this.c_name)
     
   }
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
+}
   loading(id:number){
     this.getdata(id)
   }
@@ -45,7 +50,18 @@ export class BillingInstructComponent implements OnInit {
     })
     
   }
-  
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+  }
   
   
 }
