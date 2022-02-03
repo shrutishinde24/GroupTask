@@ -36,16 +36,16 @@
   
   <form (ngSubmit)="onSubmit()" class="card-body" >
  
-    <input type="text" id="c_name" name="c_name" [(ngModel)]="c_name" placeholder="Client" style="width: 70%;border-top: 20px;border-bottom: 1px solid grey;">
+    <input type="text" id="c_name" name="c_name" [(ngModel)]="c_name" placeholder="Client" style="width: 70%;border:none;border-bottom: 2px solid grey;">
 
 
   <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-left: 30px;width: 40px;margin-top: -5px;border: none;background-color: white;color: black">
     <i class="fas fa-search" ></i>
   </button>
-  <div *ngIf="item!=null; else elseBlock"><button class="btn btn-primary" type="button" [routerLink]="['/billing-instructions']">Add</button></div>
+  <div *ngIf="item!=null; else elseBlock"><button class="btn btn-primary" type="button">Add</button></div>
 <ng-template #elseBlock></ng-template>
   
-  <p style="margin-top: 25px;"><b>select client or Epic lookup code</b></p>
+  <p style="margin-top: 25px;"><b>Please select client or Epic lookup code</b></p>
 
   </form>
   <div *ngIf="item!=null; else elseBlock"><app-final-data [item]="item"></app-final-data></div>

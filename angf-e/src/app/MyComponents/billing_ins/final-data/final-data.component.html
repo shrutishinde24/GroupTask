@@ -37,7 +37,7 @@ th, td {
       <th>Site ID</th>
       <th>Contact name</th>
       <th>GLOB</th>
-      <th>Descrption</th>
+      <th>Description</th>
       <th>Updated by</th>
       <th>Action</th>
       
@@ -51,13 +51,34 @@ th, td {
             <td>{{x.inv_delivery.glob}}</td>
             <td>{{x.inv_delivery.desc}}</td>
             <td>{{x.inv_delivery.updated_by}}</td>
-            
-            <td> <a href="#" [routerLink]="['/Lobcat/',  'view']" > <i style="color: black;" class="fas fa-eye"></i></a>&nbsp;|&nbsp;<a href="#" [routerLink]="['/Lobcat/',  'edit']" > <i style="color: black;" class="fas fa-edit"></i></a>&nbsp;|&nbsp;<a  > <i class="fas fa-trash-alt"></i></a></td>
-            
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <app-viewcomp [x]="x"></app-viewcomp>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <td> <a data-toggle="modal" data-target="#exampleModal" > <i style="color: black;" class="fas fa-eye"></i></a>&nbsp;|&nbsp;<a href="#" [routerLink]="['/billing-instruction/', item.id, 'edit']" > <i style="color: black;" class="fas fa-edit"></i></a></td>
+              
           </tr>
+          
     </tbody>
     
     
   </table>
+
 </div>
+
+
+<!-- Modal -->
+
   <app-modificationcomp [item]="item"></app-modificationcomp>

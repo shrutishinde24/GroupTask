@@ -10,11 +10,15 @@ import { HomeComponent } from './MyComponents/home/home.component';
 import { AddEdiCompoComponent } from './MyComponents/Homemodel/add-edi-compo/add-edi-compo.component';
 import { ShowCompoComponent } from './MyComponents/Homemodel/show-compo/show-compo.component';
 import { ShowDetailsComponent } from './MyComponents/show-details/show-details.component';
+import { ViewcompComponent } from './MyComponents/billing_ins/viewcomp/viewcomp.component';
+import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.component';
 
 const routes: Routes = [
   {path:"",redirectTo: 'Home', pathMatch: 'full'},
   {path:"Home",component:HomeComponent},
   {path:"billing-instruction",component:BillingInstructComponent},
+  {path:"billing-instruction/:billingId/view",component: ViewcompComponent,data:{animation:'isRight'}},
+  {path:"billing-instruction/:billingId/edit",component:EditcompComponent,data:{animation:'isRight'}},
   {path:"Lobcat",component:ShowCompoComponent},
   {path:"Lobcat/:LobcatId/view",component:ShowDetailsComponent,data: { animation: 'isRight' }},
   {path:"Lobcat/create",component:AddEdiCompoComponent,data: { animation: 'isLeft' }},

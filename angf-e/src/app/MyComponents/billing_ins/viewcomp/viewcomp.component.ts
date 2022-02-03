@@ -5,21 +5,19 @@ import { NetApiService } from 'src/app/Services/net-api.service';
 import { ClientApiService } from 'src/app/Services/client-api.service';
 
 @Component({
-  selector: 'app-final-data',
-  templateUrl: './final-data.component.html',
-  styleUrls: ['./final-data.component.css']
+  selector: 'app-viewcomp',
+  templateUrl: './viewcomp.component.html',
+  styleUrls: ['./viewcomp.component.css']
 })
-export class FinalDataComponent implements OnInit {
-  @Input() item!:any
-  x:any
+export class ViewcompComponent implements OnInit {
+  id!:number;
+
+  @Input() x:any
   constructor(public service: ClientApiService,private route: ActivatedRoute,private router: Router){ }
 
   ngOnInit(): void {
+    console.log(this.x.inv_delivery.id);
   }
-
-  show(data:any){
-    this.x=data
-  }
- 
+  
 
 }

@@ -12,10 +12,12 @@ import { ClientApiService } from 'src/app/Services/client-api.service';
 })
 export class ModificationcompComponent implements OnInit {
   @Input() item!:any;
-  instr_level!:string
+  instr_level!:string;
   desc!:string
   contact_name!:string
   id!:number
+  public ird_account:boolean=true
+  public ird_contact:boolean=false
   constructor(public service: ClientApiService,private router: Router) { }
 
   ngOnInit(): void {
@@ -37,8 +39,17 @@ export class ModificationcompComponent implements OnInit {
     this.service.clientmeta(this.id,data).subscribe(res=>{
       
       console.log(data,this.id);
-      this.router.navigateByUrl('billing-instruction');
+      this.router.navigateByUrl('Lobcat');
     })
   }
+   ird(){
+    this.ird_account=true;
+    this.ird_contact=false;
+}
+      irds(){
+    this.ird_account=false;
+    this.ird_contact=true;
+}
+   
   
 }

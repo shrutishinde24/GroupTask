@@ -11,7 +11,7 @@ export class DragDropCompComponent{
   items = ['InlandMarine', 'Casualty', 'Other', 'Package', 'Executive Risk','Aviation','Surety','Marine','Enviornmental'];
 
   basket = [''];
-
+  
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

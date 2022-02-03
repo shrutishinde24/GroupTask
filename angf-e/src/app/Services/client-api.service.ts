@@ -25,4 +25,7 @@ export class ClientApiService {
   clientmeta(id:number,data:any){
     return this.http.put(this.netapiUrl+`/api/Clients/${id}`,data);
   }
+  deleteHome(id:number){
+    return this.http.delete(this.netapiUrl+`/api/Clients/${id}`)
+  }
 }

@@ -19,6 +19,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FinalDataComponent } from './MyComponents/billing_ins/final-data/final-data.component';
 import { ModificationcompComponent } from './MyComponents/billing_ins/modificationcomp/modificationcomp.component';
 import { DragDropCompComponent } from './MyComponents/billing_ins/drag-drop-comp/drag-drop-comp.component';
+import { ViewcompComponent } from './MyComponents/billing_ins/viewcomp/viewcomp.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { DragDropCompComponent } from './MyComponents/billing_ins/drag-drop-comp
     FinalDataComponent,
     ModificationcompComponent,
     DragDropCompComponent,
+    ViewcompComponent,
     
    
     

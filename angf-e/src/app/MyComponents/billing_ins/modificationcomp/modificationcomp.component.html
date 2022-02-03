@@ -13,21 +13,31 @@
         <p>Instruction Level</p>
       </div>
       <form (ngSubmit)="submit()">
-      <div class="col-sm-4" style="text-align:left;margin-left: -10px;">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="radio1" id="radio1" >
-          <label class="form-check-label" for="inlineRadio1">Account</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="radio2" id="radio1">
-          <label class="form-check-label" for="inlineRadio2">Contact</label>
-        </div>
-      </div>
+      <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" (change)="ird()" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Account</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" (change)="irds()"  value="option2">
+  <label class="form-check-label" for="inlineRadio2">Contact</label>
+</div>
 
-    <div class="row">
+    <div class="row" *ngIf="ird_account">
       <select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="text-align: left;margin-left: 200px;margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example">
-        <option selected >Account</option>
-        <option value="1">Contact</option>
+        <option value="1">Billing</option>
+        <option value="2">Bank</option>
+         <option value="3">Insurance</option>
+        <option value="4">Hdfc</option>
+        <option value="5">union</option>
+      </select>
+    </div>
+      <div class="row" *ngIf="ird_contact">
+      <select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="text-align: left;margin-left: 200px;margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example">
+        <option value="1">Client1</option>
+        <option value="2">Client2</option>
+         <option value="3">Client3</option>
+        <option value="4">Client4</option>
+        <option value="5">Client5</option>
       </select>
     </div>
     <br>
@@ -42,7 +52,7 @@
     </div>
     <br>
     <hr>
-
+    <p>Global Line of Business</p>
 
 <div class="policy">
   <h4 style="text-align:left;margin-left: 9%;height: 30px;padding-right: 30px;padding-top: 16px; font-size: 18px;">Invoice delivery</h4>
@@ -203,7 +213,12 @@
 </form>
 <div class="row">
   <div class="col-sm-4" style="padding-right: -150%;margin-right: -150%;">
-    <p>Global Line of Business</p>
-    <!--<app-drag-drop-comp></app-drag-drop-comp>-->
+    
+    
   </div>   
 </div>
+
+     
+     
+                
+
