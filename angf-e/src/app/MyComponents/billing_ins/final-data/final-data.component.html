@@ -51,23 +51,8 @@ th, td {
             <td>{{x.inv_delivery.glob}}</td>
             <td>{{x.inv_delivery.desc}}</td>
             <td>{{x.inv_delivery.updated_by}}</td>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <app-viewcomp [x]="x"></app-viewcomp>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-            <td> <a data-toggle="modal" data-target="#exampleModal" > <i style="color: black;" class="fas fa-eye"></i></a>&nbsp;|&nbsp;<a href="#" [routerLink]="['/billing-instruction/', item.id, 'edit']" > <i style="color: black;" class="fas fa-edit"></i></a></td>
+            
+            <td> <a href="#" [routerLink]="['/billing-instruction/', item.id, 'view',x.inv_delivery.id,'item']"> <i style="color: black;" class="fas fa-eye"></i></a>&nbsp;|&nbsp;<a href="#" [routerLink]="['/billing-instruction/', item.id, 'edit']" > <i style="color: black;" class="fas fa-edit"></i></a></td>
               
           </tr>
           
@@ -78,7 +63,3 @@ th, td {
 
 </div>
 
-
-<!-- Modal -->
-
-  <app-modificationcomp [item]="item"></app-modificationcomp>

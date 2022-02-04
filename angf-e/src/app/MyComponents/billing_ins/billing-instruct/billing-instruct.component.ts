@@ -50,6 +50,9 @@ export class BillingInstructComponent implements OnInit {
     })
     
   }
+  scroll1(el: HTMLElement) {
+    el.scrollIntoView();
+}
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -62,6 +65,6 @@ export class BillingInstructComponent implements OnInit {
       );
     }
   }
-  
+ 
   
 }

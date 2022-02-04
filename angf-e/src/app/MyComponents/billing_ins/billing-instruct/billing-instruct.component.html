@@ -42,7 +42,7 @@
   <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-left: 30px;width: 40px;margin-top: -5px;border: none;background-color: white;color: black">
     <i class="fas fa-search" ></i>
   </button>
-  <div *ngIf="item!=null; else elseBlock"><button class="btn btn-primary" type="button">Add</button></div>
+  <div *ngIf="item!=null; else elseBlock"><button class="btn btn-primary" type="button" (click)="scroll1(target)">Add</button></div>
 <ng-template #elseBlock></ng-template>
   
   <p style="margin-top: 25px;"><b>Please select client or Epic lookup code</b></p>
@@ -110,5 +110,8 @@
             </div>
           </div>
         </div>
+      </div>
+      <div #target style="padding-left: 10%; padding-top:-10%">
+        <app-modificationcomp [item]="item"></app-modificationcomp>
       </div>
       

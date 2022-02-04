@@ -2,223 +2,223 @@
 	<div class="main_container">
 	</div>
 </div> 
-<div>
-  <div id="login-boxes">
+<div class="card-body" style="height:900px;">
+ 
     <div class="policy">
-      <h4 style="text-align:left;margin-top: -10px;margin-left: 9px;height: 30px;padding-right: 30px;padding-top: 16px; font-size: 15px;"><b>Add/Edit invoice search Instruction</b></h4>
+      <h4 style="text-align:left;margin-top: -10px;margin-left: 9px;height: 30px;padding-right: 30px;padding-top: 16px; font-size: 15px;"><b>Add/Edit invoice Delivery Instruction</b></h4>
       <hr>
     </div>
+    <form (ngSubmit)="submit()">
     <div class="row">
-      <div class="col-sm-2" style="text-align: left;">
+      <div class="col-sm-2">
         <p>Instruction Level</p>
       </div>
-      <form (ngSubmit)="submit()">
+      
+      <div class="col-sm-4">
       <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" (change)="ird()" value="option1">
-  <label class="form-check-label" for="inlineRadio1">Account</label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" (change)="ird()" value="option1">
+        <label class="form-check-label" for="inlineRadio1">Account</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" (change)="irds()"  value="option2">
+        <label class="form-check-label" for="inlineRadio2">Contact</label>
+      </div>
+    </div>
+    </div>
+    <br>
+
+<div class="row" *ngIf="ird_account">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-2">
+<select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example"><option value="1">Account</option>
+<option value="1">Billing</option>
+<option value="Insurance">Insurance</option>
+<option value="Hdfc">Hdfc</option>
+<option value="union">union</option>
+</select>
 </div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" (change)="irds()"  value="option2">
-  <label class="form-check-label" for="inlineRadio2">Contact</label>
+</div>
+<div class="row" *ngIf="ird_contact">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-2">
+<select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example">
+<option value="1">Contact</option>
+<option value="yaswanth">yaswanth</option>
+<option value="shruthi">shruthi</option>
+<option value="manohar">Manohar</option>
+<option value="afroz">afroz</option>
+</select>
+</div>
 </div>
 
-    <div class="row" *ngIf="ird_account">
-      <select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="text-align: left;margin-left: 200px;margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example">
-        <option value="1">Billing</option>
-        <option value="2">Bank</option>
-         <option value="3">Insurance</option>
-        <option value="4">Hdfc</option>
-        <option value="5">union</option>
-      </select>
-    </div>
-      <div class="row" *ngIf="ird_contact">
-      <select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="text-align: left;margin-left: 200px;margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example">
-        <option value="1">Client1</option>
-        <option value="2">Client2</option>
-         <option value="3">Client3</option>
-        <option value="4">Client4</option>
-        <option value="5">Client5</option>
-      </select>
-    </div>
+
     <br>
     <br>
-    <div class="row" id="sai">
+    <div class="row" >
       <div class="col-sm-2">
       </div>
-      <div class="col-sm-10" style="margin-left: 175px;">
+      <div class="col-sm-8">
         <label for="desc" style="color: lightgray;text-align: left;"></label>
-        <textarea name="desc" id="desc" [(ngModel)]="desc" placeholder="Short Descrption" style="height:100px;width: 98%; padding-top:30px;border:none;border-bottom:2px solid grey;"></textarea><br>
+        <textarea name="desc" id="desc" [(ngModel)]="desc" placeholder="Short Description" style="border:none;border-bottom:2px solid grey;width:900px;"></textarea><br>
       </div>
     </div>
-    <br>
     <hr>
-    <p>Global Line of Business</p>
+    <p>Global Lines of Business</p>
+    <!--<app-drag-drop-comp></app-drag-drop-comp>-->
 
-<div class="policy">
-  <h4 style="text-align:left;margin-left: 9%;height: 30px;padding-right: 30px;padding-top: 16px; font-size: 18px;">Invoice delivery</h4>
-  
-  </div>
-  <div class="row">
-    <div class="col-sm-2" style="text-align: left;margin-left: 9%;font-size:18px;">
-      <p>Distribution Type</p>
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Invoice Delivery</p>
+      </div>
     </div>
-    <div class="col-sm-4" style="text-align:left;margin-left: -1%;">
+
+    <div class="row">
+      <div class="col-sm-2">
+        <p> Distribution Type</p>
+      </div>
+      <div class="col-sm-4">
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="radio3" id="radio3" >
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
         <label class="form-check-label" for="inlineRadio1">Email</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="radio4" id="radio4" >
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"   value="option2">
         <label class="form-check-label" for="inlineRadio2">Mail</label>
       </div>
-    </div> 
-  </div>
-
-  <div class="row">
-    <div class="col-sm-2" style="text-align: left;margin-left: 9%;">
-     <p>Multiple email Address(es)</p>
     </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-       
-        <label class="form-check-label" >To:</label>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Multiple Email Address(es)</p>
       </div>
-    </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-       
-        <label class="form-check-label" >CC:</label>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col-sm-2" style="text-align: left;">
+      <div class="col-sm-4">
      
-    </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input " type="text" name="contact_name" id="contact_name" [(ngModel)]="contact_name" placeholder="Recipient" style="width: 380px;border-top: none;">
-        
-      </div>
-    </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
+      <p>To:</p>
        
-        <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;">
+      </div>
+      <div class="col-sm-4">
+     <p>CC:</p>
       </div>
     </div>
 
-  </div>
-  <br>
-
-  <div class="row">
-    <div class="col-sm-2" style="text-align: left;">
-     
-    </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;">
-        
+    <div class="row">
+      <div class="col-sm-2">
+  
       </div>
-    </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-       
-        <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;">
+      <div class="col-sm-4" >
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="email" name="text" id="text" placeholder="Recipient"  style="width: 380px;border:none;border-bottom: 2px solid grey;" required>
+  
+        </div>
       </div>
-    </div>
-
-  </div>
-  <br>
-
-  <div class="row">
-    <div class="col-sm-2" style="text-align: left;">
-     
-    </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;">
-        
+      <div class="col-sm-4">
+        <div class="form-check form-check-inline">
+  
+          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+        </div>
       </div>
+   
     </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-       
-        <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;">
-      </div>
-    </div>
-
-  </div>
-  <br>
-
-  <div class="row">
-    <div class="col-sm-2" style="text-align: left;">
-     
-    </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;">
-        
-      </div>
-    </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-       
-        <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;">
-      </div>
-    </div>
-
-  </div>
-  <br>
-
-  <div class="row">
-    <div class="col-sm-2" style="text-align: left;">
-     
-    </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;">
-        
-      </div>
-    </div>
-    <div class="col-sm-4" style="text-align:left;">
-      <div class="form-check form-check-inline">
-       
-        <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;">
-      </div>
-    </div>
-
-  </div>
-  <br>
-
-
-  <div class="row">
-    <div class="col-sm-2" >
-     
-    </div>
-  <div class="col-sm-10">
+    <br>
     
-      <p>EMAIL INSTRUCTIONS: </p>
-      <p style="font-size: small;">if the client requires delivery to multiple email addresses,provide the email addresses below and update the email address on the send invoice to screen at each policy level to xxx.billing@willistowerwatson.com.(xxx=Agency three letter code e.g.ALA.CAL, TEN, TEX)
-      </p>
-      
-      <p style="font-size: small;">Note: a single email will be sent to all recipient listed below</p>
-      
-  <input type="submit" value="Submit" class="btn btn-primary">
+    <div class="row">
+      <div class="col-sm-2">
+  
+      </div>
+      <div class="col-sm-4" >
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+  
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-check form-check-inline">
+  
+          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+        </div>
+      </div>
+   
+    </div>
+    <br>
+    
+    <div class="row">
+      <div class="col-sm-2">
+  
+      </div>
+      <div class="col-sm-4" >
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+  
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-check form-check-inline">
+  
+          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+        </div>
+      </div>
+   
+    </div>
+    <br>
+    
+    <div class="row">
+      <div class="col-sm-2">
+  
+      </div>
+      <div class="col-sm-4" >
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+  
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-check form-check-inline">
+  
+          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+        </div>
+      </div>
+   
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-2">
+  
+      </div>
+      <div class="col-sm-4" >
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+  
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-check form-check-inline">
+  
+          <input class="form-check-input " type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+        </div>
+      </div>
+   
     </div>
   
-  </div>
-</form>
-<div class="row">
-  <div class="col-sm-4" style="padding-right: -150%;margin-right: -150%;">
+   
     
-    
-  </div>   
+  
+
+    <div class="row">
+      <div class="col-sm-2" >
+  
+      </div>
+    <div class="col-sm-10">
+  
+        <p>EMAIL INSTRUCTIONS: </p>
+        <p style="font-size: small;">if the client requires delivery to multiple email addresses,provide the email addresses below and update the email address on the send invoice to screen at each policy level to xxx.billing@willistowerwatson.com.(xxx=Agency three letter code e.g.ALA.CAL, TEN, TEX)
+        </p>
+  
+        <p style="font-size: small;">Note: a single email will be sent to all recipient listed below</p>
+  
+    <input type="submit" value="Submit" class="btn btn-primary">
+      </div>
+  
+    </div>
+  </form>
 </div>
-
-     
-     
-                
-

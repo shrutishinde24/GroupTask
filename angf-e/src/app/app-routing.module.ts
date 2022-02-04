@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:"",redirectTo: 'Home', pathMatch: 'full'},
   {path:"Home",component:HomeComponent},
   {path:"billing-instruction",component:BillingInstructComponent},
-  {path:"billing-instruction/:billingId/view",component: ViewcompComponent,data:{animation:'isRight'}},
+  {path:"billing-instruction/:billingId/view/:itemId/item",component: ViewcompComponent,data:{animation:'isRight'}},
   {path:"billing-instruction/:billingId/edit",component:EditcompComponent,data:{animation:'isRight'}},
   {path:"Lobcat",component:ShowCompoComponent},
   {path:"Lobcat/:LobcatId/view",component:ShowDetailsComponent,data: { animation: 'isRight' }},

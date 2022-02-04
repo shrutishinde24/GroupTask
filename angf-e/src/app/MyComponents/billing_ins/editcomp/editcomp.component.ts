@@ -1,7 +1,5 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import { NetApiService } from 'src/app/Services/net-api.service';
 import { ClientApiService } from 'src/app/Services/client-api.service';
 
 @Component({
