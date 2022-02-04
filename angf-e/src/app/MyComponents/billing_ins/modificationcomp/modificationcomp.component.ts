@@ -24,13 +24,13 @@ export class ModificationcompComponent implements OnInit {
   }
   submit(){
     var data={
-      instr_level:this.instr_level,
-      agency_code:'At5H7',
+      instr_level:'Billing',
+      agency_code:'1',
       s_id:'909',
       contact_name:this.contact_name,
-      glob:'OTHERS',
+      glob:'Others',
       desc:this.desc,
-      updated_by:'User Test',
+      updated_by:'test user',
       updated_on:null,
       client_inv_del:null
     }
