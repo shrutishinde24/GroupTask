@@ -20,6 +20,7 @@ import { FinalDataComponent } from './MyComponents/billing_ins/final-data/final-
 import { ModificationcompComponent } from './MyComponents/billing_ins/modificationcomp/modificationcomp.component';
 import { DragDropCompComponent } from './MyComponents/billing_ins/drag-drop-comp/drag-drop-comp.component';
 import { ViewcompComponent } from './MyComponents/billing_ins/viewcomp/viewcomp.component';
+import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ViewcompComponent } from './MyComponents/billing_ins/viewcomp/viewcomp.
     ModificationcompComponent,
     DragDropCompComponent,
     ViewcompComponent,
+    EditcompComponent,
     
    
     
