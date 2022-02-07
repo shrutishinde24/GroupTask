@@ -28,4 +28,8 @@ export class ClientApiService {
   deleteHome(id:number){
     return this.http.delete(this.netapiUrl+`/api/Clients/${id}`)
   }
+
+  clientinvupdate(id:number,data:any){
+    return this.http.put(this.netapiUrl+ `/api/inv_delivery/${id}`,data)
+  }
 }

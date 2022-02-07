@@ -39,8 +39,11 @@ export class EditcompComponent implements OnInit {
     }   
   
     submit(){
-      console.log();
-      this.service.clientmeta(this.item, this.id).subscribe(res => {
+      this.itemId=this.route.snapshot.params['itemId'];
+      this.x.inv_delivery.client_inv_del=null;
+      console.log(this.itemId,this.x.inv_delivery);
+
+      this.service.clientinvupdate( this.itemId,this.x.inv_delivery).subscribe(res => {
            console.log('Post updated successfully!');
            this.router.navigateByUrl('billing-instruction');
       })
