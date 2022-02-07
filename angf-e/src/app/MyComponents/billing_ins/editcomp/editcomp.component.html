@@ -2,8 +2,8 @@
 <div style="margin-top: 5%;margin-left: 9%;" class="container">
     <form (ngSubmit)="submit()" ngNativeValidate>
       <div class="form-group">
-        <label for="instr_level" style="font-size:18px;">Instruction Level</label>
-        <input type="text" class="form-control" id="instr_level" name="instr_level" required  [(ngModel)]="x.inv_delivery.instr_level">        
+        <!--<label for="instr_level" style="font-size:18px;">Instruction Level</label>-->
+        Instruction Level:- <input type="text" class="form-control" id="instr_level" name="instr_level" required style="border:none;border-bottom:2px solid grey;" [(ngModel)]="x.inv_delivery.instr_level">        
       </div>
       <div class="form-group">
         <label for="agency_code" style="font-size:18px;">Epic Agency Code</label>
