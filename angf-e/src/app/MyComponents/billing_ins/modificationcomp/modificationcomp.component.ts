@@ -12,11 +12,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ModificationcompComponent implements OnInit {
   @Input() item!:any;
-  
+  date!:Date
   desc!:string
   contact_name!:string
   id!:number
-  public instr_level:string="1"
+  instr_level!:string
   public ird_account:boolean=true
   public ird_contact:boolean=false
   constructor(public service: ClientApiService,private router: Router) { }
@@ -31,8 +31,8 @@ export class ModificationcompComponent implements OnInit {
       contact_name:this.contact_name,
       glob:'OTHERS',
       desc:this.desc,
-      updated_by:'User Test',
-      updated_on:null,
+      updated_by:'test user',
+      updated_on:this.date,
       client_inv_del:null
     }
     console.log(data)
@@ -40,7 +40,7 @@ export class ModificationcompComponent implements OnInit {
     this.service.clientmeta(this.id,data).subscribe(res=>{
 
       console.log(data,this.id);
-      this.router.navigateByUrl('Lobcat');
+      this.router.navigateByUrl('Home');
     })
   }
    ird(){

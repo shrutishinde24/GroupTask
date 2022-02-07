@@ -39,6 +39,7 @@ th, td {
       <th>GLOB</th>
       <th>Description</th>
       <th>Updated by</th>
+      <th>Updated on</th>
       <th>Action</th>
       
     </tr>
@@ -51,6 +52,7 @@ th, td {
             <td>{{x.inv_delivery.glob}}</td>
             <td>{{x.inv_delivery.desc}}</td>
             <td>{{x.inv_delivery.updated_by}}</td>
+            <td>{{x.inv_delivery.updated_on}}</td>
             
             <td> <a href="#" [routerLink]="['/billing-instruction/', item.id, 'view',x.inv_delivery.id,'item']"> <i style="color: black;" class="fas fa-eye"></i></a>&nbsp;|&nbsp;<a href="#" [routerLink]="['/billing-instruction/', item.id, 'edit',x.inv_delivery.id,'item']" > <i style="color: black;" class="fas fa-edit"></i></a></td>
               
