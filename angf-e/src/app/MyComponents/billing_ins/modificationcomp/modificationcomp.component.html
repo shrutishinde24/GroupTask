@@ -8,7 +8,7 @@
       <h4 style="text-align:left;margin-top: -10px;margin-left: 9px;height: 30px;padding-right: 30px;padding-top: 16px; font-size: 15px;"><b>Add/Edit invoice Delivery Instruction</b></h4>
       <hr>
     </div>
-    <form (ngSubmit)="submit()">
+    <form (ngSubmit)="submit()" ngNativeValidate>
     <div class="row">
       <div class="col-sm-2">
         <p>Instruction Level</p>
@@ -30,11 +30,11 @@
 <div class="row" *ngIf="ird_account">
   <div class="col-sm-2"></div>
   <div class="col-sm-2">
-<select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example"><option value="Account">Account</option>
+<select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example" required><option value="Account">Account</option>
 <option value="Billing">Billing</option>
 <option value="Insurance">Insurance</option>
 <option value="Hdfc">Hdfc</option>
-<option value="union">union</option>
+<option value="union">Union</option>
 </select>
 </div>
 </div>
@@ -42,11 +42,11 @@
   <div class="col-sm-2"></div>
   <div class="col-sm-2">
 <select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example">
-<option value="Contact">Contact</option>
-<option value="yaswanth">yaswanth</option>
-<option value="shruthi">shruthi</option>
-<option value="manohar">Manohar</option>
-<option value="afroz">afroz</option>
+<option value="member1">Member1</option>
+<option value="member2">Member2</option>
+<option value="member3">Member3</option>
+<option value="member4">Member4</option>
+<option value="member5">Member5</option>
 </select>
 </div>
 </div>

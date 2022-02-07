@@ -18,6 +18,7 @@ export class ModificationcompComponent implements OnInit {
   email!:string
   id!:number
   instr_level!:string
+  
   public ird_account:boolean=true
   public ird_contact:boolean=false
   constructor(public service: ClientApiService,private router: Router) { }
