@@ -15,6 +15,7 @@ export class ModificationcompComponent implements OnInit {
   date!:Date
   desc!:string
   contact_name!:string
+  email!:string
   id!:number
   instr_level!:string
   public ird_account:boolean=true
@@ -26,14 +27,15 @@ export class ModificationcompComponent implements OnInit {
   submit(){
     var data={
       instr_level:this.instr_level,
-      agency_code:'At5H7',
-      s_id:'909',
-      contact_name:this.contact_name,
-      glob:'OTHERS',
+      agency_code:'test code',
+      s_id:'01',
+      contact_name:this.item.client_name,
+      glob:'Others',
       desc:this.desc,
       updated_by:'test user',
       updated_on:this.date,
-      client_inv_del:null
+      client_inv_del:null,
+      
     }
     console.log(data)
     this.id=this.item.id
