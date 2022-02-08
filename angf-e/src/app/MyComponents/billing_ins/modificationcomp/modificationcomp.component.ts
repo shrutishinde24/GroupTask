@@ -36,6 +36,7 @@ export class ModificationcompComponent implements OnInit {
       updated_by:'test user',
       updated_on:this.date,
       client_inv_del:null,
+      email:this.item.email,
       
     }
     console.log(data)
