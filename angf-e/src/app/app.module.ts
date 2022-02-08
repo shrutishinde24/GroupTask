@@ -21,13 +21,14 @@ import { ModificationcompComponent } from './MyComponents/billing_ins/modificati
 import { DragDropCompComponent } from './MyComponents/billing_ins/drag-drop-comp/drag-drop-comp.component';
 import { ViewcompComponent } from './MyComponents/billing_ins/viewcomp/viewcomp.component';
 import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.component';
+import { DropDownListModule, ListBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+//import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 
 
 @NgModule({
   
   declarations: [
-    AppComponent,
-    
+    AppComponent,    
     ShowCompoComponent,
     AddEdiCompoComponent,
     AboutComponent,
@@ -41,6 +42,7 @@ import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.
     DragDropCompComponent,
     ViewcompComponent,
     EditcompComponent,
+
     
    
     
@@ -54,6 +56,8 @@ import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.
     HttpClientModule,
     ReactiveFormsModule,
     FileUploadModule,
+    ListBoxModule,
+    DropDownListModule
   ],
   providers: [NetApiService],
   bootstrap: [AppComponent]

@@ -1,27 +1,32 @@
-<div cdkDropListGroup>
-    <div class="example-container">
-      <p><b>Available Global Line of Business</b></p>
-  
-      <div
-        cdkDropList
-        [cdkDropListData]="items"
-        class="example-list"
-        cdkDropListSortingDisabled
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of items" cdkDrag>{{item}}</div>
-      </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Window</title>
+  <link href="//cdn.syncfusion.com/ej2/material.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="ej2-new"> 
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLQL39J"height="0"width="0"style="display:none;visibility:hidden"></iframe></noscript>
+    <div hidden id="sync-analytics" data-queue="EJ2 - Angular - Demos"></div>
+
+    <div class="control-section" style="padding-top: 20%;">
+        <div class="dual-list-wrapper">
+            <div class="dual-list-groupa">
+                <h4>Group A</h4>
+                <ejs-listbox [dataSource]="dataA" #listbox1 [toolbarSettings]="toolbarSettings" height="330px"
+                    scope="#connected-list" [fields]="fields" [allowDragAndDrop]="true"></ejs-listbox>
+            </div>
+            <div class="dual-list-groupb">
+                <h4>Group B</h4>
+                <ejs-listbox id="connected-list" #listbox2 [dataSource]="dataB" height="330px" [fields]="fields"
+                    [allowDragAndDrop]="true" [allowFiltering]="true" scope="#connected-list">
+                </ejs-listbox>
+            </div>
+        </div>
+        <button class="e-btn" (click)="click()">Get Data</button>
     </div>
-  
-    <div class="example-container">
-      <p><b>Selected Global Line of Business</b></p>
-  
-      <div
-        cdkDropList
-        [cdkDropListData]="basket"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of basket" cdkDrag>{{item}}</div>
-      </div>
-    </div>
-  </div>
-  
+</body>
+</html>
