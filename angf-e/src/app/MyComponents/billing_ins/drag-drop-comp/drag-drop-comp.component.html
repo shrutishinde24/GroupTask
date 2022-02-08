@@ -12,16 +12,16 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLQL39J"height="0"width="0"style="display:none;visibility:hidden"></iframe></noscript>
     <div hidden id="sync-analytics" data-queue="EJ2 - Angular - Demos"></div>
 
-    <div class="control-section" style="padding-top: 20%;">
+    <div class="control-section" style="padding-top: 10%;">
         <div class="dual-list-wrapper">
             <div class="dual-list-groupa">
-                <h4>Group A</h4>
-                <ejs-listbox [dataSource]="dataA" #listbox1 [toolbarSettings]="toolbarSettings" height="330px"
+                <h4 style="font-size:18px;text-align:center">Available Global Lines of Business</h4>
+                <ejs-listbox [dataSource]="dataA" #listbox1 [toolbarSettings]="toolbarSettings" height="400"
                     scope="#connected-list" [fields]="fields" [allowDragAndDrop]="true"></ejs-listbox>
             </div>
             <div class="dual-list-groupb">
-                <h4>Group B</h4>
-                <ejs-listbox id="connected-list" #listbox2 [dataSource]="dataB" height="330px" [fields]="fields"
+                <h4 style="font-size:18px;text-align:center">Selected Global Lines of Business</h4>
+                <ejs-listbox id="connected-list" #listbox2 [dataSource]="dataB" height="400px" [fields]="fields"
                     [allowDragAndDrop]="true" [allowFiltering]="true" scope="#connected-list">
                 </ejs-listbox>
             </div>
