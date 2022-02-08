@@ -22,7 +22,7 @@ import { DragDropCompComponent } from './MyComponents/billing_ins/drag-drop-comp
 import { ViewcompComponent } from './MyComponents/billing_ins/viewcomp/viewcomp.component';
 import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.component';
 import { DropDownListModule, ListBoxModule } from '@syncfusion/ej2-angular-dropdowns';
-//import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -59,7 +59,7 @@ import { DropDownListModule, ListBoxModule } from '@syncfusion/ej2-angular-dropd
     ListBoxModule,
     DropDownListModule
   ],
-  providers: [NetApiService],
+  providers: [NetApiService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

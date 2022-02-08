@@ -1,23 +1,75 @@
-<div style="margin-top: 5%;" class="container">
-  <div class="card">
+<div style="margin-top: 6%;" class="container"  >
+  <div class="card" style="margin-left: 50px;">
+    <!-- <div class="card-header" style="background-color:lightblue; ">
+      <h4><b style="font-size:20px;">ID&nbsp;{{item.id}}</b></h4>
+    </div> -->
       
-      <div class="card-body">
+      <div class="card-body" >
         <blockquote class="blockquote mb-0">
-          <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-          <p style="font-size:18px;">Client Name -&nbsp;&nbsp;<b>{{item.client_name}}</b></p>
-          <p style="font-size:18px;">Client Code -&nbsp;&nbsp;<b>{{item.code}}</b></p>
-          <p style="font-size:18px;">Client Email -&nbsp;&nbsp;<b>{{item.email}}</b></p>
 
-          <p style="font-size:18px;">Instruction level-&nbsp;<b>{{x.inv_delivery.instr_level}}</b></p>
-          <p style="font-size:18px;">Epic Agency Code-&nbsp;<b>{{x.inv_delivery.agency_code}}</b></p>
-          <p style="font-size:18px;">Site ID-&nbsp;&nbsp;&nbsp;<b>{{x.inv_delivery.s_id}}</b></p>
-          <p style="font-size:18px;">Contact name-&nbsp;&nbsp;<b>{{x.inv_delivery.contact_name}}</b></p>
-          <p style="font-size:18px;">GLOB-&nbsp;&nbsp;&nbsp;<b>{{x.inv_delivery.glob}}</b></p>
-          <p style="font-size:18px;">Description-&nbsp;&nbsp;<b>{{x.inv_delivery.desc}}</b></p>
-          <p style="font-size:18px;">Updated by-&nbsp;&nbsp;<b>{{x.inv_delivery.updated_by}}</b></p>
-          <p style="font-size:18px;">Updated on-&nbsp;&nbsp;<b>{{x.inv_delivery.updated_on}}</b></p>
+          <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+          <table style="font-size:20px;">
+  
+  <tr>
+    <td>Client Name &nbsp;</td>
+    <td><b>-{{item.client_name}}</b></td>
+  </tr>
+  <tr>
+    <td>Client Code </td>
+    <td><b>-{{item.code}}</b></td>
+    
+  </tr>
+  <tr>
+    <td>Client Email </td>
+    <td><b>-{{item.email}}</b></td>
+    
+  </tr>
+  <tr>
+    <td>Instruction level </td>
+    <td><b>-{{x.inv_delivery.instr_level}}</b></td>
+  
+  </tr>
+  <tr>
+    <td>Epic Agency Code</td>
+    <td><b>-{{x.inv_delivery.agency_code}}</b></td>
+    
+  </tr>
+  <tr>
+    <td>Site ID</td>
+    <td><b>-{{x.inv_delivery.s_id}}</b></td>
+   
+  </tr>
+  <tr>
+    <td>Contact name</td>
+    <td><b>-{{x.inv_delivery.contact_name}}</b></td>
+   
+  </tr>
+  <tr>
+    <td>GLOB</td>
+    <td><b>-{{x.inv_delivery.glob}}</b></td>
+   
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td><b>-{{x.inv_delivery.desc}}</b></td>
+   
+  </tr>
+  <tr>
+    <td>Updated by</td>
+    <td><b>-{{x.inv_delivery.updated_by}}</b></td>
+   
+  </tr>
+  <tr>
+    <td>Updated on</td>
+    <td><b>-{{x.inv_delivery.updated_on}}</b></td>
+   
+  </tr>
+</table>
+<br>
+<button routerLink="/billing-instruction" type="button" style="font-size:18px;width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;">Back</button>
+
         </blockquote>
-        <button routerLink="/billing-instruction" type="button" style="font-size:18px;width: 80px; height: 35px; background-color: #3399ff; border:none;color:white;">Back</button>
+       
       </div>
     </div>
     </div>

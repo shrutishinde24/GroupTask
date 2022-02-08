@@ -44,7 +44,7 @@ export class ModificationcompComponent implements OnInit {
     this.service.clientmeta(this.id,data).subscribe(res=>{
 
       console.log(data,this.id);
-      this.router.navigateByUrl('billing-instruction');
+      this.router.navigateByUrl('Home');
     })
   }
    ird(){
