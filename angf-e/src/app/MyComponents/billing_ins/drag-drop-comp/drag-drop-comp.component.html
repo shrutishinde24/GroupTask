@@ -16,13 +16,13 @@
         <div class="dual-list-wrapper">
             <div class="dual-list-groupa">
                 <h4 style="font-size:18px;text-align:center">Available Global Lines of Business</h4>
-                <ejs-listbox [dataSource]="dataA" #listbox1 [toolbarSettings]="toolbarSettings" height="400"
+                <ejs-listbox [dataSource]="dataA" #listbox1 [toolbarSettings]="toolbarSettings" height="340px"
                     scope="#connected-list" [fields]="fields" [allowDragAndDrop]="true"></ejs-listbox>
             </div>
             <div class="dual-list-groupb">
                 <h4 style="font-size:18px;text-align:center">Selected Global Lines of Business</h4>
-                <ejs-listbox id="connected-list" #listbox2 [dataSource]="dataB" height="400px" [fields]="fields"
-                    [allowDragAndDrop]="true" [allowFiltering]="true" scope="#connected-list">
+                <ejs-listbox id="connected-list" #listbox2 [dataSource]="dataB" height="340px" [fields]="fields"
+                    [allowDragAndDrop]="true"  scope="#connected-list">
                 </ejs-listbox>
             </div>
         </div>
