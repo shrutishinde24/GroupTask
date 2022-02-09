@@ -18,7 +18,7 @@ export class ModificationcompComponent implements OnInit {
   @Input() item!:any;
   date!:Date
   desc!:string
-  glob!:string
+  glob!:any
   contact_name!:string
   email!:string
   id!:number
@@ -29,6 +29,8 @@ export class ModificationcompComponent implements OnInit {
   constructor(public service: ClientApiService,private router: Router) { }
  
   ngOnInit(): void {
+    this.dataA;
+    this.dataB;
   }
   
    ird(){
@@ -52,7 +54,7 @@ public dataA: { [key: string]: Object }[] = [
   { Name: "Marine", Code: "Mar" },
   { Name: "Enviornmental", Code: "Env" }
 ];
-public dataB: { [key: string]: Object }[] = [];
+public dataB: { [key: string]: Object }[]=[];
 
 public fields: FieldSettingsModel = { text: "Name" };
 public toolbarSettings: ToolbarSettingsModel = {
@@ -65,7 +67,9 @@ public toolbarSettings: ToolbarSettingsModel = {
 };
 click() {
   var data = this.listObj2.getDataList();
-  console.log(data);
+ 
+  this.dataB.push(data);
+  delete this.dataA[data];
   console.log(this.dataA);
   console.log(this.dataB);
 }
@@ -90,11 +94,11 @@ actionComplete(args: any) {
       email:this.item.email,
       
     }
-    console.log(data)
-    this.id=this.item.id
+    
+    this.id=this.item.id;
+    console.log(data);
     this.service.clientmeta(this.id,data).subscribe(res=>{
-      console.log(this.dataA);
-      console.log(this.dataB);
+      
       
     })
   }
