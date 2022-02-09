@@ -1,12 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Window</title>
+
   <link href="//cdn.syncfusion.com/ej2/material.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
 <body class="ej2-new"> 
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLQL39J"height="0"width="0"style="display:none;visibility:hidden"></iframe></noscript>
@@ -17,7 +12,7 @@
             <div class="dual-list-groupa">
                 <h4 style="font-size:18px;text-align:center">Available Global Lines of Business</h4>
                 <ejs-listbox [dataSource]="dataA" #listbox1 [toolbarSettings]="toolbarSettings" height="340px"
-                    scope="#connected-list" [fields]="fields" [allowDragAndDrop]="true"></ejs-listbox>
+                    scope="#connected-list" [fields]="fields" [allowDragAndDrop]="true" ></ejs-listbox>
             </div>
             <div class="dual-list-groupb">
                 <h4 style="font-size:18px;text-align:center">Selected Global Lines of Business</h4>
@@ -28,5 +23,3 @@
         </div>
         <button class="e-btn" (click)="click()">Get Data</button>
     </div>
-</body>
-</html>

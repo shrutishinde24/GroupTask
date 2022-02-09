@@ -4,16 +4,21 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import { NetApiService } from 'src/app/Services/net-api.service';
 import { ClientApiService } from 'src/app/Services/client-api.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {  ViewEncapsulation, ViewChild } from "@angular/core";
+import { FieldSettingsModel,ToolbarSettingsModel} from "@syncfusion/ej2-dropdowns";
 
 @Component({
   selector: 'app-modificationcomp',
   templateUrl: './modificationcomp.component.html',
-  styleUrls: ['./modificationcomp.component.css']
+  styleUrls: ['./modificationcomp.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
+
 export class ModificationcompComponent implements OnInit {
   @Input() item!:any;
   date!:Date
   desc!:string
+  glob!:string
   contact_name!:string
   email!:string
   id!:number
@@ -31,7 +36,7 @@ export class ModificationcompComponent implements OnInit {
       agency_code:'test code',
       s_id:'01',
       contact_name:this.item.client_name,
-      glob:'Others',
+      glob:this.glob,
       desc:this.desc,
       updated_by:'test user',
       updated_on:this.date,
@@ -55,5 +60,6 @@ export class ModificationcompComponent implements OnInit {
     this.ird_account=false;
     this.ird_contact=true;
 }
+
 
 }
