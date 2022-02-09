@@ -43,7 +43,7 @@ export class EditcompComponent implements OnInit {
     }   
   
     submit(){
-      let currentDateTime =this.datepipe.transform((new Date), 'MM/dd/yyyy h:mm:ss');
+      let currentDateTime =(new Date);
       this.itemId=this.route.snapshot.params['itemId'];
       this.x.inv_delivery.client_inv_del=null;
       this.x.inv_delivery.updated_on=currentDateTime;

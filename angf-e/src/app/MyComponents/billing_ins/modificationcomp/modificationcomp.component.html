@@ -61,12 +61,34 @@
       </div>
       <div class="col-sm-8">
         <label for="desc" style="color: lightgray;text-align: left;"></label>
-        <textarea name="desc" id="desc" cd angf- placeholder="Short Description" style="border:none;border-bottom:2px solid grey;width:900px;"></textarea><br>
+        <textarea name="desc" id="desc" [(ngModel)]="desc" placeholder="Short Description" style="border:none;border-bottom:2px solid grey;width:900px;"></textarea><br>
       </div>
     </div>
     <hr>
     <p>Global Lines of Business</p>
-    <app-drag-drop-comp></app-drag-drop-comp>
+    <link href="//cdn.syncfusion.com/ej2/material.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<body class="ej2-new"> 
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLQL39J"height="0"width="0"style="display:none;visibility:hidden"></iframe></noscript>
+    <div hidden id="sync-analytics" data-queue="EJ2 - Angular - Demos"></div>
+
+    <div class="control-section" style="padding-top: 10%;">
+        <div class="dual-list-wrapper">
+            <div class="dual-list-groupa">
+                <h4 style="font-size:18px;text-align:center">Available Global Lines of Business</h4>
+                <ejs-listbox [dataSource]="dataA" #listbox1 [toolbarSettings]="toolbarSettings" height="340px"
+                    scope="#connected-list" [fields]="fields" [allowDragAndDrop]="true" ></ejs-listbox>
+            </div>
+            <div class="dual-list-groupb">
+                <h4 style="font-size:18px;text-align:center">Selected Global Lines of Business</h4>
+                <ejs-listbox id="connected-list" #listbox2 [dataSource]="dataB" height="340px" [fields]="fields"
+                    [allowDragAndDrop]="true"  scope="#connected-list" [(ngModel)]="glob">
+                </ejs-listbox>
+            </div>
+        </div>
+     </div>
 
     <div class="row">
       <div class="col-sm-2">
