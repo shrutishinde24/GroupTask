@@ -28,8 +28,6 @@ export class DragDropCompComponent{
   public fields: FieldSettingsModel = { text: "Name" };
   public toolbarSettings: ToolbarSettingsModel = {
     items: [
-      //"moveUp",
-      //"moveDown",
       "moveTo",
       "moveFrom",
       "moveAllTo",
@@ -39,6 +37,14 @@ export class DragDropCompComponent{
   click() {
     var data = this.listObj2.getDataList();
     console.log(data);
+    console.log(this.dataA);
+    console.log(this.dataB);
+  }
+  actionBegin(args: any) {
+    console.log(args);
+  }
+  actionComplete(args: any) {
+    console.log(args);
   }
   
 }

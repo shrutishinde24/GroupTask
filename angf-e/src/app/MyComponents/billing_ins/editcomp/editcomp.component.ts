@@ -16,6 +16,7 @@ export class EditcompComponent implements OnInit {
   itemId!:number;
   x!:any
   item!:any
+  date!:Date
 
     constructor(public service: ClientApiService,private route: ActivatedRoute,private router: Router ,public datepipe: DatePipe){ 
       let currentDateTime =this.datepipe.transform((new Date), 'MM/dd/yyyy h:mm:ss');
@@ -43,10 +44,11 @@ export class EditcompComponent implements OnInit {
     }   
   
     submit(){
-      let currentDateTime =(new Date);
+      this.date=new Date();
+      let latest_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
       this.itemId=this.route.snapshot.params['itemId'];
       this.x.inv_delivery.client_inv_del=null;
-      this.x.inv_delivery.updated_on=currentDateTime;
+      this.x.inv_delivery.updated_on=latest_date;
       console.log(this.itemId,this.x.inv_delivery);
 
       this.service.clientinvupdate( this.itemId,this.x.inv_delivery).subscribe(res => {

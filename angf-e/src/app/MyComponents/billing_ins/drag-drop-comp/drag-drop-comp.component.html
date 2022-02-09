@@ -12,7 +12,7 @@
             <div class="dual-list-groupa">
                 <h4 style="font-size:18px;text-align:center">Available Global Lines of Business</h4>
                 <ejs-listbox [dataSource]="dataA" #listbox1 [toolbarSettings]="toolbarSettings" height="340px"
-                    scope="#connected-list" [fields]="fields" [allowDragAndDrop]="true" ></ejs-listbox>
+                    scope="#connected-list" [fields]="fields" [allowDragAndDrop]="true" (actionBegin)="actionBegin($event)"(actionComplete)="actionComplete($event)"></ejs-listbox>
             </div>
             <div class="dual-list-groupb">
                 <h4 style="font-size:18px;text-align:center">Selected Global Lines of Business</h4>
@@ -21,5 +21,4 @@
                 </ejs-listbox>
             </div>
         </div>
-        <button class="e-btn" (click)="click()">Get Data</button>
     </div>
