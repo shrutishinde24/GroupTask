@@ -32,6 +32,9 @@ namespace BackendAPI.Migrations
                     b.Property<string>("code")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Clients");
