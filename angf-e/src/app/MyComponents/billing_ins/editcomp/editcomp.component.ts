@@ -45,7 +45,7 @@ export class EditcompComponent implements OnInit {
   
     submit(){
       this.date=new Date();
-      let latest_date =this.datepipe.transform(this.date, 'yyyy-MM-dd');
+      let latest_date =this.datepipe.transform(this.date, 'yyyy-MM-ddThh:mm:ss');
       this.itemId=this.route.snapshot.params['itemId'];
       this.x.inv_delivery.client_inv_del=null;
       this.x.inv_delivery.updated_on=latest_date;

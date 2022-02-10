@@ -24,6 +24,7 @@ export class ModificationcompComponent implements OnInit {
   id!:number
   instr_level!:string
  li!:string
+ 
   public ird_account:boolean=true
   public ird_contact:boolean=false
   constructor(public service: ClientApiService,private router: Router) { }
@@ -69,7 +70,7 @@ public toolbarSettings: ToolbarSettingsModel = {
 click() {
   var data = this.listObj2.getDataList();
  //this.li.push(data[0].Name);
- this.li=(data[0].Name)
+  this.li=(data[0].Name)
   this.dataB.push(data);
   delete this.dataA[data];
   console.log(this.dataA);
