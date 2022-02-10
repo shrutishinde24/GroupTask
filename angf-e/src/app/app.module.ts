@@ -23,6 +23,7 @@ import { ViewcompComponent } from './MyComponents/billing_ins/viewcomp/viewcomp.
 import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.component';
 import { DropDownListModule, ListBoxModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DatePipe } from '@angular/common';
+import { ComponentComponent } from './MyComponents/Distribution_Queue/component/component.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { DatePipe } from '@angular/common';
     DragDropCompComponent,
     ViewcompComponent,
     EditcompComponent,
+    ComponentComponent,
 
     
    

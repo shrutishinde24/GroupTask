@@ -13,6 +13,7 @@ import { ShowDetailsComponent } from './MyComponents/show-details/show-details.c
 import { ViewcompComponent } from './MyComponents/billing_ins/viewcomp/viewcomp.component';
 import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.component';
 import { DragDropCompComponent } from './MyComponents/billing_ins/drag-drop-comp/drag-drop-comp.component';
+import { ComponentComponent } from './MyComponents/Distribution_Queue/component/component.component';
 
 const routes: Routes = [
   {path:"",redirectTo: 'Home', pathMatch: 'full'},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:"email-template",component:EmailComponent,data: { animation: 'isRight' }},
   {path:"billing-instructions",component:ModificationcompComponent},
   {path:"dual-list",component:DragDropCompComponent},
+  {path:"libraries",component:ComponentComponent},
 ];
 
 @NgModule({
