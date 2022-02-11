@@ -24,6 +24,7 @@ import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.
 import { DropDownListModule, ListBoxModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DatePipe } from '@angular/common';
 import { ComponentComponent } from './MyComponents/Distribution_Queue/component/component.component';
+import { CardbodyComponent } from './MyComponents/Distribution_Queue/cardbody/cardbody.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ComponentComponent } from './MyComponents/Distribution_Queue/component/
     ViewcompComponent,
     EditcompComponent,
     ComponentComponent,
+    CardbodyComponent,
 
     
    
