@@ -72,7 +72,8 @@ import { MatSort } from '@angular/material/sort';
     ListBoxModule,
     DropDownListModule,
         MatSortModule,
-        MatTableModule,MatPaginatorModule
+        MatTableModule,MatPaginatorModule,
+        MatSortModule
   ],
   providers: [NetApiService,DatePipe],
   bootstrap: [AppComponent]

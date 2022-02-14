@@ -1,8 +1,22 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component,Input, OnInit,ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import { NetApiService } from 'src/app/Services/net-api.service';
 import { ClientApiService } from 'src/app/Services/client-api.service';
+import {  MatSort ,Sort} from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+
+
+export interface finalData{
+  instr_level:string;
+  agency_code:string;
+  s_id:number;
+  contact_name:string;
+  glob:string;
+  desc:string;
+  updated_by:string;
+  updated_on:Date;
+}
+
+const Element_Data :finalData[]=[];
 
 @Component({
   selector: 'app-final-data',
@@ -12,9 +26,15 @@ import { ClientApiService } from 'src/app/Services/client-api.service';
 export class FinalDataComponent implements OnInit {
   @Input() item!:any
   x:any
+  
+  displayedColumns: string[]=['level','code','siteId','contact','glob','desc','updatedby','updatedon'];
+  dataSource=new MatTableDataSource(Element_Data);
+
+  @ViewChild(MatSort) sort!: MatSort;
   constructor(public service: ClientApiService,private route: ActivatedRoute,private router: Router){ }
 
   ngOnInit(): void {
+    this.dataSource.sort=this.sort;
   }
 
   show(data:any){
