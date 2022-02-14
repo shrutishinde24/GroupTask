@@ -41,7 +41,7 @@ export class DataComponent {
     this.sortedData = data.sort((a, b) => {
       const isAsc = event.direction === 'asc';
       switch (event.active) {
-        case 'Instruction_Level':
+        case 'level':
           return compare(a.Instruction_Level, b.Instruction_Level, isAsc);
         case 'code':
           return compare(a.code, b.code, isAsc);
