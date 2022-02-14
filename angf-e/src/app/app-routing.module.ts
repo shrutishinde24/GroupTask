@@ -15,6 +15,7 @@ import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.
 import { DragDropCompComponent } from './MyComponents/billing_ins/drag-drop-comp/drag-drop-comp.component';
 import { ComponentComponent } from './MyComponents/Distribution_Queue/component/component.component';
 
+
 const routes: Routes = [
   {path:"",redirectTo: 'Home', pathMatch: 'full'},
   {path:"Home",component:HomeComponent},

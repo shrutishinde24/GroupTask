@@ -1,7 +1,10 @@
 .form-control{
-    border-top: none;
-    border-left: none;
-    border-right:none;
-    border-bottom: 2px solid grey;
+border-top: none;
+border-left: none;
+border-right:none;
+border-bottom: 2px solid grey;
 
+}
+input[type=text]{
+width:700px;
 }

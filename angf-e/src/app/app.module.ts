@@ -27,6 +27,8 @@ import { ComponentComponent } from './MyComponents/Distribution_Queue/component/
 import { CardbodyComponent } from './MyComponents/Distribution_Queue/cardbody/cardbody.component';
 
 
+
+
 @NgModule({
   
   declarations: [
@@ -46,6 +48,7 @@ import { CardbodyComponent } from './MyComponents/Distribution_Queue/cardbody/ca
     EditcompComponent,
     ComponentComponent,
     CardbodyComponent,
+    
 
     
    
@@ -61,7 +64,7 @@ import { CardbodyComponent } from './MyComponents/Distribution_Queue/cardbody/ca
     ReactiveFormsModule,
     FileUploadModule,
     ListBoxModule,
-    DropDownListModule
+    DropDownListModule,
   ],
   providers: [NetApiService,DatePipe],
   bootstrap: [AppComponent]
