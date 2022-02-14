@@ -14,7 +14,7 @@ import { ViewcompComponent } from './MyComponents/billing_ins/viewcomp/viewcomp.
 import { EditcompComponent } from './MyComponents/billing_ins/editcomp/editcomp.component';
 import { DragDropCompComponent } from './MyComponents/billing_ins/drag-drop-comp/drag-drop-comp.component';
 import { ComponentComponent } from './MyComponents/Distribution_Queue/component/component.component';
-
+import { DataComponent } from './MyComponents/Distribution_Queue/data/data.component';
 
 const routes: Routes = [
   {path:"",redirectTo: 'Home', pathMatch: 'full'},
@@ -32,6 +32,7 @@ const routes: Routes = [
   {path:"billing-instructions",component:ModificationcompComponent},
   {path:"dual-list",component:DragDropCompComponent},
   {path:"libraries",component:ComponentComponent},
+  {path:"sort",component:DataComponent},
 ];
 
 @NgModule({

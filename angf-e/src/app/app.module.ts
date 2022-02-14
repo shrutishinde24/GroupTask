@@ -25,6 +25,11 @@ import { DropDownListModule, ListBoxModule } from '@syncfusion/ej2-angular-dropd
 import { DatePipe } from '@angular/common';
 import { ComponentComponent } from './MyComponents/Distribution_Queue/component/component.component';
 import { CardbodyComponent } from './MyComponents/Distribution_Queue/cardbody/cardbody.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { DataComponent } from './MyComponents/Distribution_Queue/data/data.component';
+import { MatSort } from '@angular/material/sort';
 
 
 
@@ -48,6 +53,7 @@ import { CardbodyComponent } from './MyComponents/Distribution_Queue/cardbody/ca
     EditcompComponent,
     ComponentComponent,
     CardbodyComponent,
+    DataComponent,
     
 
     
@@ -65,6 +71,8 @@ import { CardbodyComponent } from './MyComponents/Distribution_Queue/cardbody/ca
     FileUploadModule,
     ListBoxModule,
     DropDownListModule,
+        MatSortModule,
+        MatTableModule,MatPaginatorModule
   ],
   providers: [NetApiService,DatePipe],
   bootstrap: [AppComponent]
