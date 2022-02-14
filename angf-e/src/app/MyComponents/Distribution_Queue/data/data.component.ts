@@ -4,11 +4,10 @@ import {MatTableDataSource} from '@angular/material/table';
 
 
 export interface Dessert {
-  calories: number;
-  carbs: number;
-  fat: number;
-  name: string;
-  protein: number;
+  code: number;
+  s_id: number;
+  Instruction_Level: string;
+  glob:string;
 }
 
 
@@ -19,11 +18,11 @@ export interface Dessert {
 })
 export class DataComponent {
   desserts: Dessert[] = [
-    {name: 'Frozen yogurt', calories: 159, fat: 6, carbs: 24, protein: 4},
-    {name: 'Ice cream sandwich', calories: 237, fat: 9, carbs: 37, protein: 4},
-    {name: 'Eclair', calories: 262, fat: 16, carbs: 24, protein: 6},
-    {name: 'Cupcake', calories: 305, fat: 4, carbs: 67, protein: 4},
-    {name: 'Gingerbread', calories: 356, fat: 16, carbs: 49, protein: 4},
+    {Instruction_Level: 'Billing', code: 159, s_id: 6, glob:'InlandMArine'},
+    {Instruction_Level: 'Account', code: 237, s_id: 9, glob:'Casualty'},
+    {Instruction_Level: 'Union', code: 262, s_id: 16, glob:'Executive Risk'},
+    {Instruction_Level: 'Hdfc', code: 305, s_id: 4, glob:'Environmental'},
+    {Instruction_Level: 'Insurance', code: 356, s_id: 16, glob:'Others'},
   ];
 
   sortedData: Dessert[];
@@ -42,16 +41,14 @@ export class DataComponent {
     this.sortedData = data.sort((a, b) => {
       const isAsc = event.direction === 'asc';
       switch (event.active) {
-        case 'name':
-          return compare(a.name, b.name, isAsc);
-        case 'calories':
-          return compare(a.calories, b.calories, isAsc);
-        case 'fat':
-          return compare(a.fat, b.fat, isAsc);
-        case 'carbs':
-          return compare(a.carbs, b.carbs, isAsc);
-        case 'protein':
-          return compare(a.protein, b.protein, isAsc);
+        case 'Instruction_Level':
+          return compare(a.Instruction_Level, b.Instruction_Level, isAsc);
+        case 'code':
+          return compare(a.code, b.code, isAsc);
+        case 's_id':
+          return compare(a.s_id, b.s_id, isAsc);
+        case 'glob':
+          return compare(a.glob, b.glob, isAsc);
         default:
           return 0;
       }
@@ -62,4 +59,3 @@ export class DataComponent {
 function compare(a: number | string, b: number | string, isAsc: boolean) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
-
