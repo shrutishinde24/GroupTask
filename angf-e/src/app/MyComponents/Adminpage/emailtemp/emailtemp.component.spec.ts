@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddEdiCompoComponent } from './add-edi-compo.component';
+import { EmailtempComponent } from './emailtemp.component';
 
-describe('AddEdiCompoComponent', () => {
-  let component: AddEdiCompoComponent;
-  let fixture: ComponentFixture<AddEdiCompoComponent>;
+describe('EmailtempComponent', () => {
+  let component: EmailtempComponent;
+  let fixture: ComponentFixture<EmailtempComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddEdiCompoComponent ]
+      declarations: [ EmailtempComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddEdiCompoComponent);
+    fixture = TestBed.createComponent(EmailtempComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

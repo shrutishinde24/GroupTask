@@ -3,15 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ShowCompoComponent } from './MyComponents/Homemodel/show-compo/show-compo.component';
-import { AddEdiCompoComponent } from './MyComponents/Homemodel/add-edi-compo/add-edi-compo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NetApiService } from './Services/net-api.service';
-import { ShowDetailsComponent } from './MyComponents/show-details/show-details.component';
-import { EditComponent } from './MyComponents/edit/edit.component';
 import { HomeComponent } from './MyComponents/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EmailComponent } from './MyComponents/email/email.component';
 import { FileSelectDirective, FileUploadModule } from 'ng2-file-upload';
 import { BillingInstructComponent } from './MyComponents/billing_ins/billing-instruct/billing-instruct.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -27,8 +22,12 @@ import { CardbodyComponent } from './MyComponents/Distribution_Queue/cardbody/ca
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { DataComponent } from './MyComponents/Distribution_Queue/data/data.component';
 import { MatSort } from '@angular/material/sort';
+import { AddcompComponent } from './MyComponents/Adminpage/addcomp/addcomp.component';
+import { AdminpageComponent } from './MyComponents/Adminpage/adminpage/adminpage.component';
+import { EditdataComponent } from './MyComponents/Adminpage/editdata/editdata.component';
+import { EmailtempComponent } from './MyComponents/Adminpage/emailtemp/emailtemp.component';
+import { ViewdataComponent } from './MyComponents/Adminpage/viewdata/viewdata.component';
 
 
 
@@ -36,13 +35,8 @@ import { MatSort } from '@angular/material/sort';
 @NgModule({
   
   declarations: [
-    AppComponent,    
-    ShowCompoComponent,
-    AddEdiCompoComponent,
-    ShowDetailsComponent,
-    EditComponent,
+    AppComponent,
     HomeComponent,
-    EmailComponent,
     BillingInstructComponent,
     FinalDataComponent,
     ModificationcompComponent,
@@ -51,7 +45,11 @@ import { MatSort } from '@angular/material/sort';
     EditcompComponent,
     ComponentComponent,
     CardbodyComponent,
-    DataComponent,
+    AddcompComponent,
+    AdminpageComponent,
+    EditdataComponent,
+    EmailtempComponent,
+    ViewdataComponent,
     
 
     

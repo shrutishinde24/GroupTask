@@ -3,11 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NetApiService } from 'src/app/Services/net-api.service';
 
 @Component({
-  selector: 'app-show-details',
-  templateUrl: './show-details.component.html',
-  styleUrls: ['./show-details.component.css']
+  selector: 'app-viewdata',
+  templateUrl: './viewdata.component.html',
+  styleUrls: ['./viewdata.component.css']
 })
-export class ShowDetailsComponent implements OnInit {
+export class ViewdataComponent implements OnInit {
+
   id!:number;
   item!:any;
   constructor( public service: NetApiService,

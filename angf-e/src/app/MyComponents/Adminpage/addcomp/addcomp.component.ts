@@ -3,12 +3,14 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NetApiService } from 'src/app/Services/net-api.service';
 
+
 @Component({
-  selector: 'app-add-edi-compo',
-  templateUrl: './add-edi-compo.component.html',
-  styleUrls: ['./add-edi-compo.component.css']
+  selector: 'app-addcomp',
+  templateUrl: './addcomp.component.html',
+  styleUrls: ['./addcomp.component.css']
 })
-export class AddEdiCompoComponent implements OnInit {
+export class AddcompComponent implements OnInit {
+
   hom!:home
   @Input() lob!:string
   @Input() cre!:string

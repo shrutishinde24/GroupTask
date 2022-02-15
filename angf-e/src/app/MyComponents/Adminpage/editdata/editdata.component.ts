@@ -2,14 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NetApiService } from 'src/app/Services/net-api.service';
-
-
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  selector: 'app-editdata',
+  templateUrl: './editdata.component.html',
+  styleUrls: ['./editdata.component.css']
 })
-export class EditComponent implements OnInit {
+export class EditdataComponent implements OnInit {
 
   id!: number;
   item!:any;

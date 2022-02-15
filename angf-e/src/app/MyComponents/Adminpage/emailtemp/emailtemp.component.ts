@@ -6,12 +6,14 @@ import { NetApiService } from 'src/app/Services/net-api.service';
 
 const uploadAPI  = 'https://localhost:44375/api/Image/upload';
 
+
 @Component({
-  selector: 'app-email',
-  templateUrl: './email.component.html',
-  styleUrls: ['./email.component.css']
+  selector: 'app-emailtemp',
+  templateUrl: './emailtemp.component.html',
+  styleUrls: ['./emailtemp.component.css']
 })
-export class EmailComponent implements OnInit {
+export class EmailtempComponent implements OnInit {
+
   @Input() subl!:string
   @Input() body!:string
   @Input() foo!:string
