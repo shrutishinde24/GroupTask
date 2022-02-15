@@ -20,14 +20,12 @@ namespace BackendAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Globs
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Glob>>> GetGlobs()
         {
             return await _context.Globs.ToListAsync();
         }
 
-        // GET: api/Globs/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Glob>> GetGlob(int id)
         {
@@ -41,8 +39,6 @@ namespace BackendAPI.Controllers
             return glob;
         }
 
-        // PUT: api/Globs/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutGlob(int id, Glob glob)
         {
@@ -72,8 +68,6 @@ namespace BackendAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Globs
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Glob>> PostGlob(Glob glob)
         {
@@ -82,8 +76,7 @@ namespace BackendAPI.Controllers
 
             return CreatedAtAction("GetGlob", new { id = glob.Id }, glob);
         }
-
-        // DELETE: api/Globs/5
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteGlob(int id)
         {

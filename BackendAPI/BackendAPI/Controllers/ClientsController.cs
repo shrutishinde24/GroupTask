@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BackendAPI.Models;
@@ -20,14 +18,12 @@ namespace BackendAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Clients
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Client>>> GetClients()
         {
             return await _context.Clients.ToListAsync();
         }
 
-        // GET: api/Clients/5
         [HttpGet("{id}")]
         public Task<Client> GetbyId(int id)
         {
@@ -39,8 +35,6 @@ namespace BackendAPI.Controllers
             return x;
         }
 
-        // PUT: api/Clients/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutClient(int id,inv_delivery client)
         {
@@ -76,8 +70,6 @@ namespace BackendAPI.Controllers
             return Ok();
         }
 
-        // POST: api/Clients
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Client>> PostClient(Client client)
         {
@@ -85,22 +77,6 @@ namespace BackendAPI.Controllers
             await _context.SaveChangesAsync();
 
             return Ok();
-        }
-
-        // DELETE: api/Clients/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteClient(int id)
-        {
-            var client = await _context.Clients.FindAsync(id);
-            if (client == null)
-            {
-                return NotFound();
-            }
-
-            _context.Clients.Remove(client);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
         }
 
         private bool ClientExists(int id)

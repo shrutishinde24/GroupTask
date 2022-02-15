@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BackendAPI.Models;
@@ -22,14 +20,12 @@ namespace BackendAPI.Controllers
             _context = context;
         }
 
-        // GET: api/LobCategories
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LobCategory>>> GetLobCategories()
         {
             return await _context.LobCategories.ToListAsync();
         }
 
-        // GET: api/LobCategories/5
         [HttpGet("{id}")]
         public async Task<ActionResult<LobCategory>> GetLobCategory(int id)
         {
@@ -43,8 +39,6 @@ namespace BackendAPI.Controllers
             return lobCategory;
         }
 
-        // PUT: api/LobCategories/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutLobCategory(int id, LobCategory lobCategory)
         {
@@ -74,8 +68,6 @@ namespace BackendAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/LobCategories
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [EnableCors("pol")]
         [HttpPost]
         public async Task<ActionResult<LobCategory>> PostLobCategory(LobCategory lobCategory)
@@ -86,7 +78,6 @@ namespace BackendAPI.Controllers
             return CreatedAtAction("GetLobCategory", new { id = lobCategory.Id }, lobCategory);
         }
 
-        // DELETE: api/LobCategories/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteLobCategory(int id)
         {
