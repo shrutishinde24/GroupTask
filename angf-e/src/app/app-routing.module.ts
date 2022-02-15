@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './MyComponents/about/about.component';
 import { BillingInstructComponent } from './MyComponents/billing_ins/billing-instruct/billing-instruct.component';
 import { ModificationcompComponent } from './MyComponents/billing_ins/modificationcomp/modificationcomp.component';
 import { ContactComponent } from './MyComponents/contact/contact.component';
@@ -26,7 +25,6 @@ const routes: Routes = [
   {path:"Lobcat/:LobcatId/view",component:ShowDetailsComponent,data: { animation: 'isRight' }},
   {path:"Lobcat/create",component:AddEdiCompoComponent,data: { animation: 'isLeft' }},
   {path:"Lobcat/:LobcatId/edit",component:EditComponent,data: { animation: 'isRight' }},
-  {path:"about",component:AboutComponent},
   {path:"contact",component:ContactComponent},
   {path:"email-template",component:EmailComponent,data: { animation: 'isRight' }},
   {path:"billing-instructions",component:ModificationcompComponent},

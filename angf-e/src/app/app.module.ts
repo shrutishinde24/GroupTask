@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowCompoComponent } from './MyComponents/Homemodel/show-compo/show-compo.component';
 import { AddEdiCompoComponent } from './MyComponents/Homemodel/add-edi-compo/add-edi-compo.component';
-import { AboutComponent } from './MyComponents/about/about.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NetApiService } from './Services/net-api.service';
 import { ShowDetailsComponent } from './MyComponents/show-details/show-details.component';
@@ -40,7 +39,6 @@ import { MatSort } from '@angular/material/sort';
     AppComponent,    
     ShowCompoComponent,
     AddEdiCompoComponent,
-    AboutComponent,
     ShowDetailsComponent,
     EditComponent,
     HomeComponent,
