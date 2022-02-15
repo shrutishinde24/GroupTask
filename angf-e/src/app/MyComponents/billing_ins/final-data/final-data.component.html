@@ -1,6 +1,3 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
-
-
 <div>
   
   <!-- <p>{{item.id}}</p>
@@ -23,12 +20,12 @@ th, td {
 
 
 </style>
+<body>
 
 
 
 <div class ="card-body" style="overflow-x:auto;">
-  <table class="table" matSort > 
-    <thead>
+  <table class="table" matSort (matSortChange)="sortData($event)"> 
     <tr>
       <th scope="col" mat-sort-header="level">Instruction level</th>
       <th scope="col" mat-sort-header="code">Epic Agency Code</th>
@@ -38,28 +35,21 @@ th, td {
       <th scope="col" mat-sort-header="desc">Description</th>
       <th scope="col" mat-sort-header="updatedby">Updated by</th>
       <th scope="col" mat-sort-header="updated on">Updated on</th>
-      <th scope="col">Action</th>
-      
+      <th scope="col">Action</th>   
     </tr>
-  </thead>
-    <tbody *ngFor="let x of item.client_inv_del.$values">
-        <tr>
-            <td scope="row">{{x.inv_delivery.instr_level}}</td>
-            <td scope="row">{{x.inv_delivery.agency_code}}</td>
-            <td scope="row">{{x.inv_delivery.s_id}}</td>
-            <td scope="row">{{x.inv_delivery.contact_name}}</td>
-            <td scope="row">{{x.inv_delivery.glob}}</td>
-            <td scope="row">{{x.inv_delivery.desc}}</td>
-            <td scope="row">{{x.inv_delivery.updated_by}}</td>
-            <td scope="row">{{x.inv_delivery.updated_on}}</td>
-            
-            <td scope="row"> <a href="#" [routerLink]="['/billing-instruction/', item.id, 'view',x.inv_delivery.id,'item']"> <i style="color: black;" class="fas fa-eye"></i></a>&nbsp;|&nbsp;<a href="#" [routerLink]="['/billing-instruction/', item.id, 'edit',x.inv_delivery.id,'item']" > <i style="color: black;" class="fas fa-edit"></i></a></td>
-              
-          </tr>
-          
-    </tbody>
+  <tr *ngFor="let x of this.item.client_inv_del.$values">
+    <td scope="row">{{x.inv_delivery.instr_level}}</td>
+    <td scope="row">{{x.inv_delivery.agency_code}}</td>
+    <td scope="row">{{x.inv_delivery.s_id}}</td>
+    <td scope="row">{{x.inv_delivery.contact_name}}</td>
+    <td scope="row">{{x.inv_delivery.glob}}</td>
+    <td scope="row">{{x.inv_delivery.desc}}</td>
+    <td scope="row">{{x.inv_delivery.updated_by}}</td>
+    <td scope="row">{{x.inv_delivery.updated_on}}</td>
     
-    
+    <td scope="row"> <a href="#" [routerLink]="['/billing-instruction/', item.id, 'view',x.inv_delivery.id,'item']"> <i style="color: black;" class="fas fa-eye"></i></a>&nbsp;|&nbsp;<a href="#" [routerLink]="['/billing-instruction/', item.id, 'edit',x.inv_delivery.id,'item']" > <i style="color: black;" class="fas fa-edit"></i></a></td>
+      
+  </tr>
   </table>
 
 </div>
