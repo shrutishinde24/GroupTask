@@ -76,7 +76,7 @@ namespace BackendAPI.Controllers
 
             return CreatedAtAction("GetGlob", new { id = glob.Id }, glob);
         }
-        
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteGlob(int id)
         {
