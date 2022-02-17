@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NetApiService } from 'src/app/Services/net-api.service';
 
@@ -11,9 +10,9 @@ import { NetApiService } from 'src/app/Services/net-api.service';
 })
 export class AddcompComponent implements OnInit {
 
-  hom!:home
-  @Input() lob!:string
-  @Input() cre!:string
+  home_interface!:home
+  @Input() category_name!:string
+  @Input() createdBy!:string
   updatedBy!:string
   
   constructor(public service: NetApiService,
@@ -22,14 +21,14 @@ export class AddcompComponent implements OnInit {
   ngOnInit(): void {
   }
   submit(){
-    const hom={
-      lobCategoryName:this.lob,
-      createdBy:this.cre,
+    const home_interface={
+      lobCategoryName:this.category_name,
+      createdBy:this.createdBy,
       updatedBy:'',
       isActive:true
     }
-    console.log(hom)
-    this.service.addHome(hom).subscribe(res => {
+    console.log(home_interface)
+    this.service.addHome(home_interface).subscribe(res => {
          console.log('Post created successfully!');
          this.router.navigateByUrl('Lobcat');
     })
