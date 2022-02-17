@@ -23,6 +23,27 @@ namespace BackendAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "distribution_Queues",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    attachment_Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    aprroved = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    agency_Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    installment_No = table.Column<int>(type: "int", nullable: false),
+                    delivery_Method = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    client_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    email = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_distribution_Queues", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Emails",
                 columns: table => new
                 {
@@ -161,6 +182,9 @@ namespace BackendAPI.Migrations
         {
             migrationBuilder.DropTable(
                 name: "client_Inv_Dels");
+
+            migrationBuilder.DropTable(
+                name: "distribution_Queues");
 
             migrationBuilder.DropTable(
                 name: "Emails");

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using BackendAPI.Models;
 
 namespace BackendAPI.Models
 {
@@ -30,5 +31,6 @@ namespace BackendAPI.Models
         public DbSet<Client> Clients { get; set; }
         public DbSet<client_inv_del> client_Inv_Dels { get; set; }
         public DbSet<Glob> Globs { get; set; }
+        public DbSet<distribution_queue> distribution_Queues { get; set; }
     }
 }

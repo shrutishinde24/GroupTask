@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackendAPI.Migrations
 {
     [DbContext(typeof(LobContext))]
-    [Migration("20220210044432_init")]
+    [Migration("20220217122546_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -160,6 +160,45 @@ namespace BackendAPI.Migrations
                     b.HasIndex("ClientId");
 
                     b.ToTable("client_Inv_Dels");
+                });
+
+            modelBuilder.Entity("BackendAPI.Models.distribution_queue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("agency_Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("aprroved")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("attachment_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("client_name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("delivery_Method")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("installment_No")
+                        .HasColumnType("int");
+
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("distribution_Queues");
                 });
 
             modelBuilder.Entity("BackendAPI.Models.inv_delivery", b =>
