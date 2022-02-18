@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col-sm-2">
                 <div   >
-                   <input  type="button" class="change" value=" Marked For CM Review" >
+                   <input  type="button" class="change" value=" Marked For CM Review" (click)="scroll1(target)">
                 </div>
             </div>
             <div class="col-sm-2">
@@ -115,9 +115,6 @@
         <input class="btn btn-primary submitdata" type="reset" value="Clear" ></div>
      
      </div>
-     
-       
-    <div *ngIf="item!=null;"><app-cardbody [item]="item"></app-cardbody></div>
   
       
         <div class="modal fade billingmodealfade"  id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -175,6 +172,9 @@
         </div>
         
     
+        <div #target style="padding-top:10%;"> 
+          <app-cardbody [obj]="obj"></app-cardbody>  
+        </div>
   
   
 

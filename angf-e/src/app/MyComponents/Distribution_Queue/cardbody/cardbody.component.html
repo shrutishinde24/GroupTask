@@ -1,8 +1,8 @@
 <div>
   
-    <!-- <p>{{item.id}}</p>
-    <p>{{item.client_name}}</p>
-    <p>{{item.code}}</p>  -->
+    <!-- <p>{{obj.id}}</p>
+    <p>{{obj.client_name}}</p>
+    <p>{{obj.code}}</p>  -->
     
   
   <style>
@@ -39,14 +39,14 @@
       </tr>
     </thead>
       <tbody>
-          <tr *ngFor="let x of this.item.$values">
+          <tr >
               <td scope="row"></td>
-              <td scope="row">{{x.attachment_name}}</td>
-              <td scope="row"></td>
-              <td scope="row"></td>
-              <td scope="row"></td>
-              <td scope="row"></td>
-              <td scope="row"></td>
+              <td scope="row">{{obj.attachment_Name}}</td>
+                      <td scope="row">{{obj.aprroved}}</td>
+                      <td scope="row">{{obj.agency_Code}}</td>
+                      <td scope="row">{{obj.status}}</td>
+                      <td scope="row">{{obj.installment_No}}</td>
+                      <td scope="row">{{obj.delivery_Method}}</td>
 
                 
             </tr>
