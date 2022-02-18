@@ -2,7 +2,7 @@
   
     <!-- <p>{{item.id}}</p>
     <p>{{item.client_name}}</p>
-    <p>{{item.code}}</p> -->
+    <p>{{item.code}}</p>  -->
     
   
   <style>
@@ -39,9 +39,9 @@
       </tr>
     </thead>
       <tbody>
-          <tr>
+          <tr *ngFor="let x of this.item.$values">
               <td scope="row"></td>
-              <td scope="row"></td>
+              <td scope="row">{{x.attachment_name}}</td>
               <td scope="row"></td>
               <td scope="row"></td>
               <td scope="row"></td>

@@ -72,3 +72,11 @@
     .distributionclear{
         font: size 16px;width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;
     }    
+
+    .billingmodealfade{
+        width: 1300px;
+        margin-top: 80px;
+       }
+       .billingmodealcontent{
+       width: 900px;
+       }

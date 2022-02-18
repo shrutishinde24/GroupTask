@@ -28,15 +28,15 @@
      </div>
      <div class="col-sm-1">
    
-      <div *ngIf="item!=null; else elseBlock"><button class="btn btn-primary" type="button" (click)="scroll1(target)">Add</button></div>
-   <ng-template #elseBlock></ng-template>
+      <div *ngIf="item!=null;"><button class="btn btn-primary" type="button" (click)="scroll1(target)">Add</button></div>
+   
    </div>
    </div>
      <p style="margin-top: 25px;"><b>Please select client or Epic lookup code</b></p>
    
      </form>
-  <div *ngIf="item!=null; else elseBlock"><app-final-data [item]="item"></app-final-data></div>
-<ng-template #elseBlock></ng-template>
+  <div *ngIf="item!=null;"><app-final-data [item]="item"></app-final-data></div>
+
   
 </div>
   </div>
@@ -81,7 +81,7 @@
 
             <div class="modal-footer footer" >
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" (click)="loading(obj.id)"  data-dismiss="modal">Select  </button>
+              <button type="submit" class="btn btn-primary" (click)="loading(obj.id)"  data-dismiss="modal">Select</button>
 
             </div>
           </div>

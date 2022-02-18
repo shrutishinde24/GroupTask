@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import { NetApiService } from 'src/app/Services/net-api.service';
 import { ClientApiService } from 'src/app/Services/client-api.service';
 
 @Component({
@@ -14,9 +12,7 @@ export class BillingInstructComponent implements OnInit {
   obj!:any
   item!:any
   cli_li:any=[]
-  items = ['Carrots', 'Tomatoes', 'Onions', 'Apples', 'Avocados'];
   c_name!:string
-  basket = [''];
   constructor(public service: ClientApiService,
     private router: Router) { }
 
@@ -53,18 +49,7 @@ export class BillingInstructComponent implements OnInit {
   scroll1(el: HTMLElement) {
     el.scrollIntoView();
 }
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
-    }
   }
  
   
-}
+

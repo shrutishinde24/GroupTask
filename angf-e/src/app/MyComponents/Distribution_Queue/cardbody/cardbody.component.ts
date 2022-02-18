@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-cardbody',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardbodyComponent implements OnInit {
 
+  @Input() item!:any
+  x:any
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  show(data:any){
+    this.x=data
   }
 
 }
