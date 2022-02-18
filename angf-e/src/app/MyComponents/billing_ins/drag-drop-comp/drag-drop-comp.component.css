@@ -31,3 +31,15 @@
         width: 41%;
     }
 }
+.iframe{
+    display:none;
+    visibility:hidden 
+}
+.section{
+    padding-top: 8%;
+    padding-left:10%
+}
+.sizefordata{
+    font-size:18px;
+    text-align:left
+}

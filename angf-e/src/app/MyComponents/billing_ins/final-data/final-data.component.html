@@ -5,29 +5,12 @@
   <p>{{item.code}}</p> -->
   
 
-<style>
-table {
-  border-collapse: collapse;
-  border-color: grey;
-  border-spacing: 2;
-  width: 120%;
-  border: 2px solid #ddd;
-}
 
-th {
-  text-align: center;
-}
-td {
-  text-align: left;
-}
-
-
-</style>
 <body>
 
 
 
-<div class ="card-body" style="overflow-x:auto;">
+<div class ="card-body finalbody">
   <table class="table" matSort (matSortChange)="sortData($event)"> 
     <tr>
       <th scope="col" mat-sort-header="level">Instruction level</th>
@@ -56,4 +39,3 @@ td {
   </table>
 
 </div>
-

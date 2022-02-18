@@ -1,89 +1,79 @@
-<div style="margin-left: 100px;
-    margin-right: 13px;
-    background-color: #ebebeb;
-    
-    margin-bottom: 0px;
-    padding-bottom: 50%;
-    text-align: left;
-    padding-left: 20px;
-    padding-top: 160px;
-    padding-right: 20px;
-    font-size: 15px;
-    line-height: 20pt;">
+
+  <div class="billingviewheader">
   
     
 
-  <div class="card" style="margin-left: 200px;width: 950px;">
-    <!-- <div class="card-header" style="background-color:lightblue; ">
-      <h4><b style="font-size:20px;">ID&nbsp;{{item.id}}</b></h4>
-    </div> -->
+    <div class="card billingviewcard text-primary border-primary" >
+      <!-- <div class="card-header" style="background-color:lightblue; ">
+        <h4><b style="font-size:20px;">ID&nbsp;{{item.id}}</b></h4>
+      </div> -->
+        
+        <div class="card-body" >
+          <blockquote class="blockquote mb-0">
+  
+            <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+            <table class="billingviewtable" >
+    
+    <tr>
+      <td>Client Name &nbsp;</td>
+      <td>-{{item.client_name}}</td>
+    </tr>
+    <tr>
+      <td>Client Code </td>
+      <td>-{{item.code}}</td>
       
-      <div class="card-body" >
-        <blockquote class="blockquote mb-0">
-
-          <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-          <table style="font-size:20px;">
+    </tr>
+    <tr>
+      <td>Client Email </td>
+      <td>-{{item.email}}</td>
+      
+    </tr>
+    <tr>
+      <td>Instruction level </td>
+      <td>-{{x.inv_delivery.instr_level}}</td>
+    
+    </tr>
+    <tr>
+      <td>Epic Agency Code</td>
+      <td>-{{x.inv_delivery.agency_code}}</td>
+      
+    </tr>
+    <tr>
+      <td>Site ID</td>
+      <td>-{{x.inv_delivery.s_id}}</td>
+     
+    </tr>
+    <tr>
+      <td>Contact name</td>
+      <td>-{{x.inv_delivery.contact_name}}</td>
+     
+    </tr>
+    <tr>
+      <td>GLOB</td>
+      <td>-{{x.inv_delivery.glob}}</td>
+     
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>-{{x.inv_delivery.desc}}</td>
+     
+    </tr>
+    <tr>
+      <td>Updated by</td>
+      <td>-{{x.inv_delivery.updated_by}}</td>
+     
+    </tr>
+    <tr>
+      <td>Updated on</td>
+      <td>-{{x.inv_delivery.updated_on}}</td>
+     
+    </tr>
+  </table>
+  <br>
+  <button routerLink="/billing-instruction" type="button" class="billingviewback" >Back</button>
   
-  <tr>
-    <td>Client Name &nbsp;</td>
-    <td>-{{item.client_name}}</td>
-  </tr>
-  <tr>
-    <td>Client Code </td>
-    <td>-{{item.code}}</td>
-    
-  </tr>
-  <tr>
-    <td>Client Email </td>
-    <td>-{{item.email}}</td>
-    
-  </tr>
-  <tr>
-    <td>Instruction level </td>
-    <td>-{{x.inv_delivery.instr_level}}</td>
-  
-  </tr>
-  <tr>
-    <td>Epic Agency Code</td>
-    <td>-{{x.inv_delivery.agency_code}}</td>
-    
-  </tr>
-  <tr>
-    <td>Site ID</td>
-    <td>-{{x.inv_delivery.s_id}}</td>
-   
-  </tr>
-  <tr>
-    <td>Contact name</td>
-    <td>-{{x.inv_delivery.contact_name}}</td>
-   
-  </tr>
-  <tr>
-    <td>GLOB</td>
-    <td>-{{x.inv_delivery.glob}}</td>
-   
-  </tr>
-  <tr>
-    <td>Description</td>
-    <td>-{{x.inv_delivery.desc}}</td>
-   
-  </tr>
-  <tr>
-    <td>Updated by</td>
-    <td>-{{x.inv_delivery.updated_by}}</td>
-   
-  </tr>
-  <tr>
-    <td>Updated on</td>
-    <td>-{{x.inv_delivery.updated_on}}</td>
-   
-  </tr>
-</table>
-<br>
-<button routerLink="/billing-instruction" type="button" style="font-size:18px;width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;">Back</button>
-
-        </blockquote>
-       
+          </blockquote>
+         
+        </div>
       </div>
-    </div>
-    </div>
+      </div>

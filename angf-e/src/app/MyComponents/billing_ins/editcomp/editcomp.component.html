@@ -1,36 +1,26 @@
-<div style="margin-left: 100px;
-    margin-right: 13px;
-    background-color: #ebebeb;
-    
-    margin-bottom: 0px;
-    padding-bottom: 50%;
-    text-align: left;
-    padding-left: 20px;
-    padding-top: 100px;
-    padding-right: 20px;
-    font-size: 15px;
-    line-height: 20pt;">
+<div class="edithead">
   <form (ngSubmit)="submit()" ngNativeValidate>
-    <div class="card " style="margin-left: 180px;width: 1000px;">
+    <div class="card editcard text-primary border-primary" >
+    
 
       <!-- <div class="card-header " style="background-color:lightblue">
         <h4><b style="font-size:20px;">ID&nbsp;{{item.id}}</b></h4>
       </div> -->
 
-      <div class="card-body">
+      <div class="card-body c-b ">
         
     <div class="form-group row">
       <div class="col-sm-3">
-      <label for="agency_code" style="font-size:18px;">Instruction Level:</label>
+      <label for="agency_code "  class="editagencycode" >Instruction Level:</label>
       </div>
       <div class="col-sm-9">
-      <input type="text" class="form-control" id="instr_level" name="instr_level" required style="border:none;border-bottom:2px solid grey;" [(ngModel)]="x.inv_delivery.instr_level"> 
+      <input type="text" class="form-control" id="instr_level" name="instr_level" required [(ngModel)]="x.inv_delivery.instr_level"> 
       </div>
     </div>
   
     <div class="form-group row">
       <div class="col-sm-3">
-        <label for="agency_code" style="font-size:18px;">Epic Agency Code:</label>
+        <label for="agency_code" class="editagencycode">Epic Agency Code:</label>
       </div>
       <div class="col-sm=9">
         <input type="text" class="form-control" id="agency_code" name="agency_code" required  [(ngModel)]="x.inv_delivery.agency_code" style="margin-left: 13px;">        
@@ -38,7 +28,7 @@
     </div>
     <div class="form-group row">
       <div class="col-sm-3">
-      <label for="s_id" style="font-size:18px;">Site ID:</label>
+      <label for="s_id" class="editagencycode">Site ID:</label>
       </div>
       <div class="col-sm-9">
       <input type="text" class="form-control" id="s_id" name="s_id" required  [(ngModel)]="x.inv_delivery.s_id">  
@@ -46,7 +36,7 @@
     </div>
     <div class="form-group row">
       <div class="col-sm-3">
-      <label for="contact_name" style="font-size:18px;">Contact name:</label>
+      <label for="contact_name" class="editagencycode">Contact name:</label>
       </div>
       <div class="col-sm-9">
       <input type="text" class="form-control" id="contact_name" name="contact_name" required  [(ngModel)]="x.inv_delivery.contact_name"> 
@@ -54,7 +44,7 @@
     </div>
     <div class="form-group row">
       <div class="col-sm-3">
-      <label for="glob" style="font-size:18px;">GLOB:</label>
+      <label for="glob" class="editagencycode">GLOB:</label>
       </div>
       <div class="col-sm-9">
       <input type="text" class="form-control" id="glob" name="glob" required  [(ngModel)]="x.inv_delivery.glob">  
@@ -62,7 +52,7 @@
     </div>
     <div class="form-group row">
       <div class="col-sm-3">
-      <label for="desc" style="font-size:18px;">Description:</label>
+      <label for="desc" class="editagencycode">Description:</label>
       </div>
       <div class="col-sm-9">
       <input type="text" class="form-control" id="desc" name="desc" required  [(ngModel)]="x.inv_delivery.desc">
@@ -70,7 +60,7 @@
     </div>
     <div class="form-group row">
       <div class="col-sm-3">
-      <label for="updated_by" style="font-size:18px;">Updated by:</label>
+      <label for="updated_by" class="editagencycode">Updated by:</label>
       </div>
       <div class="col-sm-9">
       <input type="text" class="form-control" id="updated_by" name="updated_by" required  [(ngModel)]="x.inv_delivery.updated_by">  
@@ -78,24 +68,25 @@
     </div>
     <div class="form-group row">
       <div class="col-sm-3">
-      <label for="updated_on" style="font-size:18px;">Updated On:</label>
+      <label for="updated_on" class="editagencycode">Updated On:</label>
       </div>  
       <div class="col-sm-9">
       <input type="text" class="form-control" id="updated_on" name="updated_on"  [(ngModel)]="x.inv_delivery.updated_on">
       </div>        
     </div>
-    <button type="submit" style="font-size:18px;width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;">Submit</button>
+    <button type="submit" class="editsubmit" >Submit</button>
     &nbsp;
     &nbsp;
     &nbsp;
     
-    <button routerLink="/billing-instruction" type="button" style="font-size:18px;width: 80px; height: 35px; background-color: #3399ff; border:none;color:white;">Back</button>
+    <button routerLink="/billing-instruction" type="button" class="editback">Back</button>
       </div>
     </div>
+    
   </form>
-  </div>
+</div>
+  
                                               
-
 
 
 

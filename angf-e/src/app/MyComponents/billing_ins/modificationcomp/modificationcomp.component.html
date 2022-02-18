@@ -1,11 +1,11 @@
-<div style="margin-top: 5%;">
+<div>
 	<div class="main_container">
 	</div>
 </div> 
-<div class="card-body" style="height:900px;">
+<div class="card-body h-900" >
  
-    <div class="policy">
-      <h4 style="text-align:left;margin-top: -10px;margin-left: 9px;height: 30px;padding-right: 30px;padding-top: 16px; font-size: 15px;"><b>Add/Edit invoice Delivery Instruction</b></h4>
+    <div class="policy" >
+      <h4 class="modifymain" ><b>Add/Edit invoice Delivery Instruction</b></h4>
       <hr>
     </div>
     <form (ngSubmit)="submit()" ngNativeValidate>
@@ -30,7 +30,7 @@
 <div class="row" *ngIf="ird_account">
   <div class="col-sm-2"></div>
   <div class="col-sm-2">
-<select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example" required><option value="Account">Account</option>
+<select class="form-select modifyselect" id="instr_level" name="instr_level" [(ngModel)]="instr_level"  aria-label="Default select example" required><option value="Account">Account</option>
 <option value="Billing">Billing</option>
 <option value="Insurance">Insurance</option>
 <option value="Hdfc">Hdfc</option>
@@ -41,7 +41,7 @@
 <div class="row" *ngIf="ird_contact">
   <div class="col-sm-2"></div>
   <div class="col-sm-2">
-<select class="form-select" id="instr_level" name="instr_level" [(ngModel)]="instr_level" style="margin-top: 1px; width: 500px;border:none;border-bottom:2px solid grey;" aria-label="Default select example">
+<select class="form-select modifyselect" id="instr_level" name="instr_level" [(ngModel)]="instr_level"  aria-label="Default select example">
 <option value="Shruti">Shruti</option>
 <option value="Afroz">Afroz</option>
 <option value="Yaswanth">Yaswanth</option>
@@ -60,8 +60,8 @@
       <div class="col-sm-2">
       </div>
       <div class="col-sm-8">
-        <label for="desc" style="color: lightgray;text-align: left;"></label>
-        <textarea name="desc" id="desc" [(ngModel)]="desc" placeholder="Short Description" style="border:none;border-bottom:2px solid grey;width:900px;"></textarea><br>
+        <label for="desc" class="modifylabel" ></label>
+        <textarea name="desc" class="modifydesc" id="desc" [(ngModel)]="desc" placeholder="Short Description" ></textarea><br>
       </div>
     </div>
     <hr>
@@ -72,25 +72,35 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 <body class="ej2-new"> 
 
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLQL39J"height="0"width="0"style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe class="modifyiframe" src="https://www.googletagmanager.com/ns.html?id=GTM-WLQL39J"height="0"width="0"></iframe></noscript>
     <div hidden id="sync-analytics" data-queue="EJ2 - Angular - Demos"></div>
 
     <div class="control-section" s>
-        <div class="dual-list-wrapper">
-            <div class="dual-list-groupa">
-                <h4 style="font-size:18px;text-align:center">Available Global Lines of Business</h4>
-                <ejs-listbox [dataSource]="dataA" #listbox1 [toolbarSettings]="toolbarSettings" height="340px"
-                    scope="#connected-list" [fields]="fields" [allowDragAndDrop]="true" (actionBegin)="actionBegin($event)"(actionComplete)="actionComplete($event)"></ejs-listbox>
-            </div>
-            <div class="dual-list-groupb">
-                <h4 style="font-size:18px;text-align:center">Selected Global Lines of Business</h4>
-                <ejs-listbox id="connected-list" #listbox2 [dataSource]="dataB" height="340px" [fields]="fields"
-                    [allowDragAndDrop]="true"  scope="#connected-list">
-                </ejs-listbox>
-            </div>
+      <div class="dual-list-wrapper">
+        <div class="row">
+          <div class="col-sm-6">
+          <div class="dual-list-groupa">
+           
+              <h4  class="sizefordata">Available Global Lines of Business</h4>
+              <ejs-listbox [dataSource]="dataA" #listbox1 [toolbarSettings]="toolbarSettings" class="modifydrag" height="340px" 
+                  scope="#connected-list" [fields]="fields" [allowDragAndDrop]="true" (actionBegin)="actionBegin($event)"(actionComplete)="actionComplete($event)"></ejs-listbox>
+                </div>
+              </div>
+              <div class="col-sm-6">
+          <div class="dual-list-groupb">
+              <h4  class="sizefordata">Selected Global Lines of Business</h4>
+              <ejs-listbox id="connected-list" #listbox2 [dataSource]="dataB" height="340px" class="modifydrag"  [fields]="fields"
+                  [allowDragAndDrop]="true"  scope="#connected-list">
+              </ejs-listbox>
+          </div>
         </div>
-        <button class="e-btn" (click)="click()">Confirm</button>
-    </div>
+        </div>
+    
+        
+      </div>
+      <br>
+      <button class="e-btn" (click)="click()">Confirm</button>
+  </div>
     <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
     <div class="row">
       <div class="col-sm-2">
@@ -134,14 +144,14 @@
       </div>
       <div class="col-sm-4" >
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="email" name="email" id="email" placeholder="Recipient"  style="width: 380px;border:none;border-bottom: 2px solid grey;" required [(ngModel)]="email">
+          <input class="form-check-input modifyplaceholder" type="email" name="email" id="email" placeholder="Recipient"  required [(ngModel)]="email">
   
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-check form-check-inline">
   
-          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+          <input class="form-check-input modifyplaceholder" type="text" name="text" id="text" placeholder="Recipient" >
         </div>
       </div>
    
@@ -154,14 +164,14 @@
       </div>
       <div class="col-sm-4" >
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+          <input class="form-check-input modifyplaceholder" type="text" name="text" id="text" placeholder="Recipient" >
   
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-check form-check-inline">
   
-          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+          <input class="form-check-input modifyplaceholder" type="text" name="text" id="text" placeholder="Recipient" >
         </div>
       </div>
    
@@ -174,14 +184,14 @@
       </div>
       <div class="col-sm-4" >
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+          <input class="form-check-input modifyplaceholder" type="text" name="text" id="text" placeholder="Recipient" >
   
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-check form-check-inline">
   
-          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+          <input class="form-check-input modifyplaceholder" type="text" name="text" id="text" placeholder="Recipient">
         </div>
       </div>
    
@@ -194,14 +204,14 @@
       </div>
       <div class="col-sm-4" >
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+          <input class="form-check-input modifyplaceholder" type="text" name="text" id="text" placeholder="Recipient" >
   
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-check form-check-inline">
   
-          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+          <input class="form-check-input modifyplaceholder" type="text" name="text" id="text" placeholder="Recipient" >
         </div>
       </div>
    
@@ -213,14 +223,14 @@
       </div>
       <div class="col-sm-4" >
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+          <input class="form-check-input modifyplaceholder" type="text" name="text" id="text" placeholder="Recipient" >
   
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-check form-check-inline">
   
-          <input class="form-check-input " type="text" name="text" id="text" placeholder="Recipient" style="width: 380px;border:none;border-bottom: 2px solid grey;">
+          <input class="form-check-input modifyplaceholder " type="text" name="text" id="text" placeholder="Recipient" >
         </div>
       </div>
    
@@ -237,10 +247,10 @@
     <div class="col-sm-10">
   
         <p>EMAIL INSTRUCTIONS: </p>
-        <p style="font-size: small;">if the client requires delivery to multiple email addresses,provide the email addresses below and update the email address on the send invoice to screen at each policy level to xxx.billing@willistowerwatson.com.(xxx=Agency three letter code e.g.ALA.CAL, TEN, TEX)
+        <p  class="modifypara">if the client requires delivery to multiple email addresses,provide the email addresses below and update the email address on the send invoice to screen at each policy level to xxx.billing@willistowerwatson.com.(xxx=Agency three letter code e.g.ALA.CAL, TEN, TEX)
         </p>
   
-        <p style="font-size: small;">Note: a single email will be sent to all recipient listed below</p>
+        <p class="modifypara">Note: a single email will be sent to all recipient listed below</p>
   
     <input type="submit" value="Submit" class="btn btn-primary">
       </div>
