@@ -14,6 +14,7 @@ export class ComponentComponent implements OnInit {
   item!:any
   cli_li:any=[]
   c_name!:string
+  list1:any=[]
 
   constructor(public service: ClientApiService,
     private router: Router) { }
@@ -35,17 +36,13 @@ export class ComponentComponent implements OnInit {
     
   }
   
-  loading(id:number){
-    this.get(id)
-    
-  }
-  get(id:number){
-    
-    this.service.getdatabyid(id).subscribe(res=>{
-      this.item=res;
-      console.log("inside ",this.item)
+  submit()
+  {
+    this.service.getqueuedata().subscribe(res=>{
+      this.list1=res;
     })
-    
+    this.item=this.list1;
+    console.log(this.item);
   }
   scroll1(el: HTMLElement) {
     el.scrollIntoView();

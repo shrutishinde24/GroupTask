@@ -7,7 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class CardbodyComponent implements OnInit {
 
-  @Input() obj!:any
+  @Input() item!:any
   x:any
   
   constructor() { }

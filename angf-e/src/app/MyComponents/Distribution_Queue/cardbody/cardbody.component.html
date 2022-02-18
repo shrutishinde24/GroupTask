@@ -42,17 +42,17 @@
       </tr>
     </thead>
       <tbody>
-          <tr >
-              <td scope="row"></td>
-              <td scope="row">{{obj.attachment_Name}}</td>
-                      <td scope="row">{{obj.aprroved}}</td>
-                      <td scope="row">{{obj.agency_Code}}</td>
-                      <td scope="row">{{obj.status}}</td>
-                      <td scope="row">{{obj.installment_No}}</td>
-                      <td scope="row">{{obj.delivery_Method}}</td>
-                      <td scope="row">{{obj.email}}</td>
-                      <td scope="row">{{obj.client_name}}</td>
-                      <td scope="row">{{obj.code}}</td>
+          <tr *ngFor="let x of this.item.$values">
+              <td scope="row">1</td>
+              <td scope="row">1</td>
+                      <td scope="row">{{x.aprroved}}</td>
+                      <td scope="row">{{x.agency_Code}}</td>
+                      <td scope="row">{{x.status}}</td>
+                      <td scope="row">{{x.installment_No}}</td>
+                      <td scope="row">{{x.delivery_Method}}</td>
+                      <td scope="row">{{x.email}}</td>
+                      <td scope="row">{{x.client_name}}</td>
+                      <td scope="row">{{x.code}}</td>
 
                 
             </tr>
