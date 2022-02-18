@@ -1,76 +1,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div style="margin-top: 5%;">
-	<div class="main_container">
-		<div style="background: #dedede;
-		color: grey;
-		font-weight: 0;
-		font-size: 30px;
-		line-height: 18px;		
-		margin-top: 65px;
-		margin-left: 6%;
-		padding: 20px;
-		padding-top: 5px;
-		margin-right: 0px;
-		background-color: white;">
+	<div class="main_container ">
+		<div class="distriutionmain" >
 	Distribution Work Queue
 		</div>
-        <div class="row" style="background: #dedede;
-		color: grey;
-		font-weight: 0;
-		font-size: 30px;
-		line-height: 18px;
-		
-		margin-top: 20px;
-		margin-left: 8%;
-		margin-right: 0px;
-		background-color: white;
-        margin-bottom: 15px;">
-            <button class="btn btn-primary" type="button" style="font: size 16px;width: auto; height: 35px; background-color: #3399ff;border:none;color:white;">Email Distribution</button>
-            <button class="btn btn-primary" type="button" style="margin-left:1%;font: size 16px;width: auto; height: 35px; background-color: #3399ff;border:none;color:white;">Distribute By Mail</button>
+        <div class="distriutionbuttons">
+        <div class="row">
+            
+            
+                <div class="col-sm-2">
+            <button class="btn btn-primary btnstyle" type="button" >Email Distribution</button>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-primary btnstyle" type="button" >Distribute By Mail</button>
+            </div>
+            <div class="col-sm-2">
 
-            <button class="btn btn-primary" type="button" style="margin-left:43%;font: size 16px;width: auto; height: 35px; background-color: #3399ff;border:none;color:white;">Manual Distribution</button>
-            <button class="btn btn-primary" type="button" style="margin-left:1%;font: size 16px;width: auto; height: 35px; background-color: #3399ff;border:none;color:white;">Route to CM</button>
-            <button class="btn btn-primary" type="button" style="margin-left:1%;font: size 16px;width: auto; height: 35px; background-color: #3399ff;border:none;color:white;">Do Not Distribute</button>
+            </div>
+           
+            <div class="col-sm-2 ">
+            <button class="btn btn-primary btnstyle" type="button" >Manual Distribution</button>
+            </div>
+            <div class="col-sm-2">
+            <button class="btn btn-primary btnstyle" type="button">Route to CM</button>
+            </div>
+            <div class="col-sm-2 ">
+            <button class="btn btn-primary btnstyle" type="button" >Do Not Distribute</button>
+            </div>
+      
+           </div>
         </div>
 	  </div>
 </div>
 <div >
-  <div style="margin-left: 100px;
-    margin-right: 13px;
-    background-color: #ebebeb;
-    margin-bottom: 0px;
-    padding-bottom: 50%;
-    text-align: left;
-    padding-left: 20px;
-    padding-top: 2px;
-    padding-right: 20px;
-    font-size: 15px;
-    line-height: 20pt;">
-<div class="card" style="max-height: 400%;margin-top: 50px;">
-  <div class="card-header" style="background-color:white;margin-top: 20px;padding-top: 7px;font-size: medium;">
+  <div class="distributionpad">
+<div class="card distributioncard" >
+  <div class="card-header distributionheader" >
     <b>Summary</b>
   </div>  
   <form class="card-body" >
     <div >
         <div class="row">
             <div class="col-sm-2">
-                <div class="change">Marked For CM Review</div>
+                <div   >
+                   <input  type="button" class="change" value=" Marked For CM Review" (click)="scroll(target)" >
+                </div>
             </div>
             <div class="col-sm-2">
-                <div class="change">Email Ready</div>
+                <div >
+                    <input  type="button" class="change" value=" Email Ready" (click)="scroll(target)" >
+                </div>
             </div><div class="col-sm-2">
-                <div class="change">Print Ready</div>
+                <div >
+                    <input  type="button" class="change" value=" Print Ready" (click)="scroll(target)" >
+                </div>
             </div><div class="col-sm-2">
-                <div class="change">Special Handling</div>
+                <div >
+                    <input  type="button" class="change" value=" Special Handling" (click)="scroll(target)" >
+                </div>
             </div><div class="col-sm-2">
-                <div class="change">Do Not Distribute</div>
+                <div >
+                    <input  type="button" class="change" value=" Do Not Distribute" (click)="scroll(target)" >
+                </div>
             </div><div class="col-sm-2">
-                <div class="change">Multiple Attachments</div>
+                <div >
+                    <input  type="button" class="change" value=" Multiple Attachments" (click)="scroll(target)" >
+                </div>
             </div>
         </div>
       </div>
    
-     <p  style="margin-top : -13px; "></p>
+      <p  class="para"></p>
       <div >
           <div class="row">
               <div class="col-sm-2">
@@ -94,8 +94,8 @@
 </div>
 
 
-<div class="card" style="max-height: 400%;margin-top: 50px;">
-    <div class="card-header" style="background-color:white;margin-top: 20px;padding-top: 7px;font-size: medium;">
+<div class="card searchcard" >
+    <div class="card-header searchheader" >
       <b>Search</b>
     </div>
     
@@ -103,17 +103,17 @@
   
       <div class="row">
         <div class="col-sm-10">
-         <input type="text" id="c_name" name="c_name" placeholder="Invoice No" style="width: 40%;border:none;border-bottom: 2px solid grey;border-right: none;">
+         <input type="text" id="c_name" name="c_name" placeholder="Invoice No" >
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <input type="text" id="c_name" name="c_name" placeholder="Client Name" style="width: 40%;border:none;border-bottom: 2px solid grey;border-right: none;">
+         <input type="text" id="c_name" name="c_name" placeholder="Client Name" >
         </div>
        <div class="col-sm-10">
        
       </div>
        <div class="row">
            <div class="row">
-            <button class="btn btn-primary" type="button"style="font: size 16px;width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;margin-right:10px;" (click)="scroll(target)">Search</button>
-            <input class="btn btn-primary" type="reset" value="Clear" style="font: size 16px;width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;">
+            <button class="btn btn-primary distributionsearch" type="button"(click)="scroll(target)">Search</button>
+            <input class="btn btn-primary distributionclear" type="reset" value="Clear" >
         </div>
         
      </div>
@@ -129,7 +129,3 @@
     <app-cardbody></app-cardbody>
    </div></div>
 </div>
-
-
-    
-     
