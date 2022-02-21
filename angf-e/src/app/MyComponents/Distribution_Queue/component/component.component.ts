@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClientApiService } from 'src/app/Services/client-api.service';
-
-import { HttpClient } from '@angular/common/http';
 import * as XLSX from 'xlsx';
 
 @Component({
