@@ -28,6 +28,7 @@ import { AdminpageComponent } from './MyComponents/Adminpage/adminpage/adminpage
 import { EditdataComponent } from './MyComponents/Adminpage/editdata/editdata.component';
 import { EmailtempComponent } from './MyComponents/Adminpage/emailtemp/emailtemp.component';
 import { ViewdataComponent } from './MyComponents/Adminpage/viewdata/viewdata.component';
+import { saveAs } from 'file-saver';
 
 
 
@@ -69,7 +70,9 @@ import { ViewdataComponent } from './MyComponents/Adminpage/viewdata/viewdata.co
     DropDownListModule,
         MatSortModule,
         MatTableModule,MatPaginatorModule,
-        MatSortModule
+        MatSortModule,
+        
+        
   ],
   providers: [NetApiService,DatePipe],
   bootstrap: [AppComponent]

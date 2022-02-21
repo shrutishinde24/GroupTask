@@ -10,6 +10,7 @@ import { AdminpageComponent } from './MyComponents/Adminpage/adminpage/adminpage
 import { EditdataComponent } from './MyComponents/Adminpage/editdata/editdata.component';
 import { EmailtempComponent } from './MyComponents/Adminpage/emailtemp/emailtemp.component';
 import { ViewdataComponent } from './MyComponents/Adminpage/viewdata/viewdata.component';
+import { CardbodyComponent } from './MyComponents/Distribution_Queue/cardbody/cardbody.component';
 
 const routes: Routes = [
   {path:"",redirectTo: 'Home', pathMatch: 'full'},
@@ -20,9 +21,11 @@ const routes: Routes = [
   {path:"Lobcat",component:AdminpageComponent},
   {path:"Lobcat/:LobcatId/view",component:ViewdataComponent,data: { animation: 'isRight' }},
   {path:"Lobcat/create",component:AddcompComponent,data: { animation: 'isLeft' }},
+  {path:"card",component:CardbodyComponent},
   {path:"Lobcat/:LobcatId/edit",component:EditdataComponent,data: { animation: 'isRight' }},
   {path:"email-template",component:EmailtempComponent,data: { animation: 'isRight' }},
   {path:"libraries",component:ComponentComponent},
+  
 ];
 
 @NgModule({

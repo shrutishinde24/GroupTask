@@ -25,23 +25,19 @@ export class ClientApiService {
   clientmeta(id:number,data:any){
     return this.http.put(this.netapiUrl+`/api/Clients/${id}`,data);
   }
-  
+  deleteHome(id:number){
+    return this.http.delete(this.netapiUrl+`/api/Clients/${id}`)
+  }
+
   clientinvupdate(id:number,data:any){
     return this.http.put(this.netapiUrl+ `/api/inv_delivery/${id}`,data)
   }
+  getdistributionbystatus(status:string):Observable<any>{
+    return this.http.get(this.netapiUrl+`/api/Distribution/GetStatus/${status}`);
 
-  //Distribution_queue
-  getqueuedata():Observable<any[]>{
-    return this.http.get<any>(this.netapiUrl+ `/api/distribution_queue`);
   }
+  getdistributionbysearch(invoice:string,clientname:string):Observable<any>{
+    return this.http.get(this.netapiUrl+`/api/Distribution/${invoice}/${clientname}`);
 
-  getdatabyid(id:number):Observable<any>{
-    return this.http.get(this.netapiUrl+`/api/distribution_queue/{id}`)
   }
-  queuedata(id:number,data:any){
-    return this.http.put(this.netapiUrl+`/api/distribution_queue/{id}`,data);
-  }
-
-  
-
 }

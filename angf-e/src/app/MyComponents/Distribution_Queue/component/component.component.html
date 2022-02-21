@@ -43,16 +43,16 @@
         <div class="row">
             <div class="col-sm-2">
                 <div   >
-                   <input  type="button" class="change" value=" Marked For CM Review" (click)="submit()" (click)="scroll1(target)">
+                   <input  type="button"   class="change" value=" Marked For CM Review" (click)="markedCm('Ready for cm review')" >
                 </div>
             </div>
             <div class="col-sm-2">
                 <div >
-                    <input  type="button" class="change" value=" Email Ready" >
+                    <input  type="button" class="change" value=" Email Ready" (click)="markedCm('Ready for email ')" >
                 </div>
             </div><div class="col-sm-2">
                 <div >
-                    <input  type="button" class="change" value=" Print Ready"  >
+                    <input  type="button" class="change" value=" Print Ready" (click)="markedCm('Ready for print ')" >
                 </div>
             </div><div class="col-sm-2">
                 <div >
@@ -60,11 +60,11 @@
                 </div>
             </div><div class="col-sm-2">
                 <div >
-                    <input  type="button" class="change" value=" Do Not Distribute"  >
+                    <input  type="button" class="change" value=" Do Not Distribute" >
                 </div>
             </div><div class="col-sm-2">
                 <div >
-                    <input  type="button" class="change" value=" Multiple Attachments"  >
+                    <input  type="button" class="change" value=" Multiple Attachments" >
                 </div>
             </div>
         </div>
@@ -74,18 +74,18 @@
       <div >
           <div class="row">
               <div class="col-sm-2">
-                  <div class="change">---</div>
+                  <div class="change">45</div>
               </div>
               <div class="col-sm-2">
-                  <div class="change">---</div>
+                  <div class="change">43</div>
               </div><div class="col-sm-2">
-                  <div class="change">---</div>
+                  <div class="change">5</div>
               </div><div class="col-sm-2">
-                  <div class="change">---</div>
+                  <div class="change">23</div>
               </div><div class="col-sm-2">
-                  <div class="change">---</div>
+                  <div class="change">43</div>
               </div><div class="col-sm-2">
-                  <div class="change">---</div>
+                  <div class="change">15</div>
               </div>
           </div>
         </div>
@@ -99,82 +99,90 @@
       <b>Search</b>
     </div>
     
-    <form (ngSubmit)="onSubmit()" class="card-body" >
-
+    <form class="card-body finalbody" >
+  
       <div class="row">
-        <div class="col-sm-10 ">
-         
-         <input type="text" class="clientnamesr" id="c_name" name="c_name" [(ngModel)]="c_name" placeholder="Client"  >
+        <div class="col-sm-10">
+         <input type="text" id="invoice_name" #invname name="invoice_name"  placeholder="Invoice No" >
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="text" id="client_name" #client_name name="client_name"  placeholder="Client Name" >
+        </div>
+       <div class="col-sm-10">
+       
+      </div>
+       <div class="row">
+           <div class="row">
+            <button class="btn btn-primary distributionsearch" type="button" (click)="searching(invname.value, client_name.value)">Search</button>
+            <input class="btn btn-primary distributionclear" type="reset" value="Clear" >
+        </div>
         
-       </div>
-       <div class="col-sm-1">
-       <button type="submit" class="btn btn-primary submitdata" data-toggle="modal" data-target="#exampleModal" >Search</button>
-       </div>
-       <div class="col-sm-1">
-     
-        <input class="btn btn-primary submitdata" type="reset" value="Clear" ></div>
-     
      </div>
-  
-      
-        <div class="modal fade billingmodealfade"  id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document" >
-            <div class="modal-content billingmodealcontent"   >
-              <div class="modal-header modalheader">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-             
-            
-                    
-  
-              <table  id="dtBasicExample" class="table table-striped table-bordered table-sm tablehead" cellspacing="0"   >
-                  <thead>
-                    <tr>
-                      <th scope="col">Attachment Name</th>
-                      <th scope="col">Date/Time Approved</th>
-                      <th scope="col">Epic Agency Code</th>
-                      <th scope="col">Current Status</th>
-                      <th scope="col">Installment No.</th>
-                      <th scope="col">Delivery Method</th>
-                      <th scope="col">Client Email</th>
-                      <th scope="col">Client Name</th>
-                      <th scope="col">Client Code</th>
-                    </tr>
-                  </thead>
-                  
-                    <tbody class="bluebackground">
-                      <tr >
-                      <td scope="row">{{obj.attachment_Name}}</td>
-                      <td scope="row">{{obj.aprroved}}</td>
-                      <td scope="row">{{obj.agency_Code}}</td>
-                      <td scope="row">{{obj.status}}</td>
-                      <td scope="row">{{obj.installment_No}}</td>
-                      <td scope="row">{{obj.delivery_Method}}</td>
-                      <td scope="row">{{obj.email}}</td>
-                      <td scope="row">{{obj.client_name}}</td>
-                      <td scope="row">{{obj.code}}</td>
-                       
-                      </tr>
-                    </tbody>
-                    
-                     
-              </table>
-              
-              
-  
-              <div class="modal-footer footer" >
-                <button type="button" class="btn btn-primary submitdata" data-dismiss="modal">Close</button>  
-              </div>
-            </div>
-          </div>
-        </div>
-        
-    
-        <div #target style="padding-top:10%;"> 
-          <app-cardbody [item]="item"></app-cardbody>  
-        </div>
-  
-  
+     </div>    
+     
+       </form>
 
+       <div class ="card-body" style="overflow-x:auto;">
+        
+        <table class="table" id="excel-table">
+          <thead >
+          <tr >
+            
+            <th scope="col">Attachment Name</th>
+            <th scope="col">Date/Time Approved</th>
+            <th scope="col">Epic Agency Code</th>
+            <th scope="col">Current Status</th>
+            <th scope="col">Installment No.</th>
+            <th scope="col">D Mehtod</th>
+            <th scope="col">CM Reviewer Email</th>
+            <th scope="col">To:Email Address (cc)</th>
+            <th scope="col">Cc:Email Address (cc)</th>
+            <th scope="col">Invoice #</th>
+            <th scope="col">Epic Lookup CD</th>
+            <th scope="col">Client Name</th>
+            <th scope="col">Send to CM Date</th>
+            <th scope="col">CM Reviwer Date</th>
+            <th scope="col">CM Approved</th>
+    
+            
+          </tr>
+        </thead>
+          <tbody>
+              <tr *ngFor="let x of this.item.$values">
+                  <td scope="row">{{x.attachment_name}}</td>
+                  <td scope="row">{{x.datetime_approved}}</td>
+                  <td scope="row">{{x.epic_agencycode}}</td>
+                  <td scope="row">{{x.current_status}}</td>
+                  <td scope="row">{{x.installeddate}}</td>
+                  <td scope="row">{{x.dmethod}}</td>
+                  <td scope="row">{{x.cmemail}}</td>
+                  <td scope="row">{{x.toemail}}</td>
+                  <td scope="row">{{x.cmemail}}</td>
+                  <td scope="row">{{x.invoice}}</td>
+                  <td scope="row">{{x.epic_lookup_code}}</td>
+                  <td scope="row">{{x.client_name}}</td>
+                  <td scope="row">{{x.sendcm_date}}</td>
+                  <td scope="row">{{x.cmreview_date}}</td>
+                  <td scope="row">{{x.cmapproved}}</td>
+                  
+    
+                    
+                </tr>
+                
+          </tbody>
+          
+          
+        </table>
+        <button type="button" class="btn btn-primary excel" (click)="exportexcel()">Export to Excel</button>
+      
+    </div>
+    
+  </div>
+  
+  </div>
+  
+  </div>
+
+
+
+    
+     

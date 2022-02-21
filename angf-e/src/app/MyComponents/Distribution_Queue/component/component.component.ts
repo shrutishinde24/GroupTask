@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClientApiService } from 'src/app/Services/client-api.service';
 
+import { HttpClient } from '@angular/common/http';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-component',
@@ -9,44 +11,62 @@ import { ClientApiService } from 'src/app/Services/client-api.service';
   styleUrls: ['./component.component.css']
 })
 export class ComponentComponent implements OnInit {
-
+  title = 'angular-app';
+  fileName= 'ExcelSheet.xlsx';
   obj!:any
   item!:any
-  cli_li:any=[]
-  c_name!:string
-  list1:any=[]
+  invoice_name!:string;
+  client_name!:string;
 
-  constructor(public service: ClientApiService,
-    private router: Router) { }
+  constructor( public service: ClientApiService,
+    private router: Router) { 
+      
+    }
+    
 
   ngOnInit(): void {
-    this.client_list();
   }
-
-  client_list(){
-    this.service.getqueuedata().subscribe(res=>{
-      this.cli_li=res;
-    })
-  }
-
- onSubmit(){
-  this.c_name = this.c_name.toLowerCase();
-  console.log(this.c_name)
-  this.obj=this.cli_li.$values.find((z: { client_name: string; })=>z.client_name==this.c_name)  
-    
-  }
-  
-  submit()
-  {
-    this.service.getqueuedata().subscribe(res=>{
-      this.list1=res;
-    })
-    this.item=this.list1;
-    console.log(this.item);
-  }
-  scroll1(el: HTMLElement) {
-    el.scrollIntoView();
+  excel=[]; 
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
 }
-  }
- 
+
   
+
+
+markedCm(status:string){
+    
+  this.service.getdistributionbystatus(status).subscribe(res=>{
+    this.item=res;
+    console.log("inside ",this.item)
+  })
+}
+
+
+
+searching(invname:string,clientname:string){
+  
+  this.service.getdistributionbysearch(invname,clientname).subscribe(res=>{
+    this.item=res;
+    console.log("inside ",this.item)
+  
+  })
+
+}
+exportexcel(): void
+  {
+    /* pass here the table id */
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
+    XLSX.writeFile(wb, this.fileName);
+ 
+  }
+
+ 
+}

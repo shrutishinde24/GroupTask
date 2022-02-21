@@ -66,17 +66,48 @@
     #c_name{
         width: 40%;border:none;border-bottom: 2px solid grey;border-right: none;
     }
+    #invoice_name{
+        width:30%;
+        border: none;
+        border-bottom: 2px solid grey;
+    
+    }
+    #client_name{
+        width:30%;
+        border: none;
+        border-bottom: 2px solid grey;
+    }
     .distributionsearch{
         font: size 16px;width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;margin-right:10px;
     }
     .distributionclear{
         font: size 16px;width: 80px; height: 35px; background-color: #3399ff;border:none;color:white;
-    }    
-
-    .billingmodealfade{
-        width: 1300px;
-        margin-top: 80px;
-       }
-       .billingmodealcontent{
-       width: 900px;
-       }
+    }
+    
+    .table {
+        border-collapse: collapse;
+        margin-top: 100px;
+        
+        border-spacing: 2;
+        width: 230%;
+        border: 1px solid black;
+        
+      }
+      
+      th {
+        text-align: left;
+        
+        color: white;
+        background-color: purple;
+      }
+       td {
+        text-align: left;
+        border: 1px solid black;
+      }
+      .finalbody{
+        overflow-x:auto;
+      }
+      .excel{
+         
+          margin-top: 50px;
+      }
