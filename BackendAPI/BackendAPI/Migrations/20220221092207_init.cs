@@ -23,24 +23,30 @@ namespace BackendAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "distribution_Queues",
+                name: "Distributions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    attachment_Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    aprroved = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    agency_Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    status = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    installment_No = table.Column<int>(type: "int", nullable: false),
-                    delivery_Method = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Attachment_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Datetime_approved = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Epic_agencycode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    current_status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    installeddate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Dmethod = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    cmemail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    toemail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ccemail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    invoice = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    epic_lookup_code = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     client_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    code = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    email = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    sendcm_date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    cmreview_date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    cmapproved = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_distribution_Queues", x => x.Id);
+                    table.PrimaryKey("PK_Distributions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -184,7 +190,7 @@ namespace BackendAPI.Migrations
                 name: "client_Inv_Dels");
 
             migrationBuilder.DropTable(
-                name: "distribution_Queues");
+                name: "Distributions");
 
             migrationBuilder.DropTable(
                 name: "Emails");

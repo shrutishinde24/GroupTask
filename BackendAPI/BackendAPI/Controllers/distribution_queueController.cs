@@ -9,99 +9,76 @@ using BackendAPI.Models;
 
 namespace BackendAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[Controller]")]
     [ApiController]
-    public class distribution_queueController : ControllerBase
+    public class DistributionController : ControllerBase
     {
+
         private readonly LobContext _context;
 
-        public distribution_queueController(LobContext context)
+        public DistributionController(LobContext context)
         {
             _context = context;
         }
 
-        // GET: api/distribution_queue
+
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<distribution_queue>>> Getdistribution_Queues()
+        public async Task<ActionResult<IEnumerable<Distribution>>> GetDistribution()
         {
-            return await _context.distribution_Queues.ToListAsync();
+            return await _context.Distributions.ToListAsync();
+
         }
 
-        // GET: api/distribution_queue/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<distribution_queue>> Getdistribution_queue(int id)
+        [HttpGet("GetStatus/{status}")]
+        public async Task<ActionResult<IEnumerable<Distribution>>> getstatus(string status)
         {
-            var distribution_queue = await _context.distribution_Queues.FindAsync(id);
+            return await _context.Distributions.Where(lc => lc.current_status.Equals(status)).ToListAsync();
 
-            if (distribution_queue == null)
+        }
+
+        [HttpGet("{invoice}/{clientname}")]
+        public async Task<ActionResult<IEnumerable<Distribution>>> getsearch(string invoice, string clientname)
+        {
+            return await _context.Distributions.Where(lc => lc.invoice.Equals(invoice) && lc.client_name.Equals(clientname)).ToListAsync();
+
+        }
+
+        [HttpGet("GetId/{id}")]
+        public async Task<ActionResult<Distribution>> GetDistribution(int id)
+        {
+            var distributions = await _context.Distributions.FindAsync(id);
+
+            if (distributions == null)
             {
                 return NotFound();
             }
 
-            return distribution_queue;
+            return distributions;
         }
 
-        // PUT: api/distribution_queue/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Putdistribution_queue(int id, distribution_queue distribution_queue)
-        {
-            if (id != distribution_queue.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(distribution_queue).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!distribution_queueExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/distribution_queue
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<distribution_queue>> Postdistribution_queue(distribution_queue distribution_queue)
+        public async Task<ActionResult<Distribution>> PostDistribution(Distribution distribution)
         {
-            _context.distribution_Queues.Add(distribution_queue);
+            _context.Distributions.Add(distribution);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("Getdistribution_queue", new { id = distribution_queue.Id }, distribution_queue);
+            return Ok();
         }
-
-        // DELETE: api/distribution_queue/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Deletedistribution_queue(int id)
+        public async Task<IActionResult> DeleteDistributions(int id)
         {
-            var distribution_queue = await _context.distribution_Queues.FindAsync(id);
-            if (distribution_queue == null)
+            var distribution = await _context.Distributions.FindAsync(id);
+            if (distribution == null)
             {
                 return NotFound();
             }
 
-            _context.distribution_Queues.Remove(distribution_queue);
+            _context.Distributions.Remove(distribution);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool distribution_queueExists(int id)
-        {
-            return _context.distribution_Queues.Any(e => e.Id == id);
-        }
+
     }
 }

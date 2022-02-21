@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\BackendAPI",
-    "\\BackendAPI\\BackendAPI",
-    "\\BackendAPI\\BackendAPI\\Controllers",
-    "\\BackendAPI\\BackendAPI\\Models"
+    ""
   ],
-  "SelectedNode": "\\BackendAPI\\BackendAPI\\Models\\LobCategory.cs",
+  "SelectedNode": "\\BackendAPI.sln",
   "PreviewInSolutionExplorer": false
 }

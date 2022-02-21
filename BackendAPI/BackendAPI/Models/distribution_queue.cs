@@ -5,21 +5,26 @@ using System.Threading.Tasks;
 
 namespace BackendAPI.Models
 {
-    public class distribution_queue
+    public class Distribution
     {
         public int Id { get; set; }
-        public string attachment_Name { get; set; }
-        public DateTime? aprroved { get; set; }
-        public string agency_Code { get; set; }
-        public string status { get; set; }
-        public int installment_No { get; set; }
-        public string delivery_Method { get; set; }
+        public string Attachment_name { get; set; }
+        public DateTime Datetime_approved { get; set; }
+        public string Epic_agencycode { get; set; }
+        public string current_status { get; set; }
+        public DateTime installeddate { get; set; }
+        public string Dmethod { get; set; }
+        public string cmemail { get; set; }
+        public string toemail { get; set; }
+        public string ccemail { get; set; }
+        public string invoice { get; set; }
+        public string epic_lookup_code { get; set; }
         public string client_name { get; set; }
-        public string code { get; set; }
-        public string email
-        {
-            get; set;
-        }
+        public DateTime sendcm_date { get; set; }
+        public DateTime cmreview_date { get; set; }
+        public string cmapproved { get; set; }
+
+
 
     }
 }

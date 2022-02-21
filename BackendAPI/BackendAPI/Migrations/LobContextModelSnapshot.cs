@@ -40,6 +40,63 @@ namespace BackendAPI.Migrations
                     b.ToTable("Clients");
                 });
 
+            modelBuilder.Entity("BackendAPI.Models.Distribution", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Attachment_name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Datetime_approved")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Dmethod")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Epic_agencycode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ccemail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("client_name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("cmapproved")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("cmemail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("cmreview_date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("current_status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("epic_lookup_code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("installeddate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("invoice")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("sendcm_date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("toemail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Distributions");
+                });
+
             modelBuilder.Entity("BackendAPI.Models.Email", b =>
                 {
                     b.Property<int>("Id")
@@ -158,45 +215,6 @@ namespace BackendAPI.Migrations
                     b.HasIndex("ClientId");
 
                     b.ToTable("client_Inv_Dels");
-                });
-
-            modelBuilder.Entity("BackendAPI.Models.distribution_queue", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("agency_Code")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("aprroved")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("attachment_Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("client_name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("code")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("delivery_Method")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("installment_No")
-                        .HasColumnType("int");
-
-                    b.Property<string>("status")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("distribution_Queues");
                 });
 
             modelBuilder.Entity("BackendAPI.Models.inv_delivery", b =>
