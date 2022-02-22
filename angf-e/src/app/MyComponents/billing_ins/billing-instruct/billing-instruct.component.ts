@@ -9,10 +9,11 @@ import { ClientApiService } from 'src/app/Services/client-api.service';
 })
 export class BillingInstructComponent implements OnInit {
   
-  obj!:any
+  object!:any
   item!:any
-  cli_li:any=[]
-  c_name!:string
+  client_data:any=[]
+  client_name!:string
+
   constructor(public service: ClientApiService,
     private router: Router) { }
 
@@ -23,13 +24,13 @@ export class BillingInstructComponent implements OnInit {
   }
   client_list(){
     this.service.getClient().subscribe(res=>{
-      this.cli_li=res;
+      this.client_data=res;
     })
   }
   onSubmit(){
-    this.c_name = this.c_name.toLowerCase();
-    console.log(this.c_name)
-    this.obj=this.cli_li.$values.find((z: { client_name: string; })=>z.client_name==this.c_name)
+    this.client_name = this.client_name.toLowerCase();
+    console.log(this.client_name)
+    this.object=this.client_data.$values.find((z: { client_name: string; })=>z.client_name==this.client_name)
     
   }
   scroll(el: HTMLElement) {

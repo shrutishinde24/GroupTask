@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col-sm-10 ">
        
-       <input type="text" class="clientnamesr" id="c_name" name="c_name" [(ngModel)]="c_name" placeholder="Client"  >
+       <input type="text" class="clientnamesr" id="client_name" name="client_name" [(ngModel)]="client_name" placeholder="Client"  >
       
      </div>
      <div class="col-sm-1">
@@ -28,15 +28,15 @@
      </div>
      <div class="col-sm-1">
    
-      <div *ngIf="item!=null; else elseBlock"><button class="btn btn-primary" type="button" (click)="scroll1(target)">Add</button></div>
-   <ng-template #elseBlock></ng-template>
+      <div *ngIf="item!=null;"><button class="btn btn-primary" type="button" (click)="scroll1(target)">Add</button></div>
+   
    </div>
    </div>
      <p style="margin-top: 25px;">Please select client or Epic lookup code</p>
    
      </form>
-  <div *ngIf="item!=null; else elseBlock"><app-final-data [item]="item"></app-final-data></div>
-<ng-template #elseBlock></ng-template>
+  <div *ngIf="item!=null;"><app-final-data [item]="item"></app-final-data></div>
+
   
 </div>
   </div>
@@ -67,9 +67,9 @@
                 
                   <tbody class="bluebackground">
                     <tr >
-                    <td scope="row">{{obj.client_name}}</td>
+                    <td scope="row">{{object.client_name}}</td>
                       <td >-</td>
-                      <td >{{obj.code}}</td>
+                      <td >{{object.code}}</td>
                      
                     </tr>
                   </tbody>

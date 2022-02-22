@@ -14,11 +14,11 @@ const uploadAPI  = 'https://localhost:44375/api/Image/upload';
 })
 export class EmailtempComponent implements OnInit {
 
-  @Input() subl!:string
+  @Input() subject_line!:string
   @Input() body!:string
-  @Input() foo!:string
+  @Input() footer!:string
   id!:number
-  re!:any
+  image_name!:any
   constructor(private imageService : NetApiService,private router: Router) { }
   title = 'email template';
   public uploader: FileUploader = new FileUploader({ url: uploadAPI, itemAlias: 'imageFile' });
@@ -31,7 +31,7 @@ export class EmailtempComponent implements OnInit {
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
         console.log('FileUpload:uploaded successfully:', item, status, response);
-        this.re=response;
+        this.image_name=response;
         alert('Your file has been uploaded successfully');
     }
   }
@@ -39,10 +39,10 @@ export class EmailtempComponent implements OnInit {
   submit(){
     const data={
       Id:this.id,
-      subject_line:this.subl,
+      subject_line:this.subject_line,
       body:this.body,
-      footer:this.foo,
-      imageName:this.re
+      footer:this.footer,
+      imageName:this.image_name
     }
     if(data.imageName==null){
       alert("please upload image")

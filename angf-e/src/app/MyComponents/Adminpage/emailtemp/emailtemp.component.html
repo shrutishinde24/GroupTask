@@ -16,8 +16,8 @@
     <form (ngSubmit)="submit()">
       <div class="card-body" >
    
-    <label for="subl" ></label>
-    <input type="text"  id="subl" name="subl" [(ngModel)]="subl" placeholder="Subject Line"  ><br>
+    <label for="subject_line" ></label>
+    <input type="text"  id="subject_line" name="subject_line" [(ngModel)]="subject_line" placeholder="Subject Line"  ><br>
   
   
     
@@ -26,8 +26,8 @@
   
   
   
-  <label for="foo" ></label>
-  <textarea id="foo" name="foo" [(ngModel)]="foo" placeholder="Footer" ></textarea>
+  <label for="footer" ></label>
+  <textarea id="footer" name="footer" [(ngModel)]="footer" placeholder="Footer" ></textarea>
   
   
   <div class="attach">
@@ -36,7 +36,7 @@
   </div>
   <div class ="button" >
   <input  type="submit" class="emailedit" value="Edit" id="add" >
-  <input type="reset" class="emailclear" value="Clear" id="clr" >
+  <input type="reset" class="emailclear" value="Clear" id="clear" >
   
   
   </div>
