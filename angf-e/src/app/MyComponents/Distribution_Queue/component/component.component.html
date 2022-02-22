@@ -74,12 +74,12 @@
       <div >
           <div class="row">
               <div class="col-sm-2">
-                  <div class="change">---</div>
+                  <div class="change">{{this.count1}}</div>
               </div>
               <div class="col-sm-2">
-                  <div class="change">---</div>
+                  <div class="change">{{this.count2}}</div>
               </div><div class="col-sm-2">
-                  <div class="change">---</div>
+                  <div class="change">{{this.count3}}</div>
               </div><div class="col-sm-2">
                   <div class="change">---</div>
               </div><div class="col-sm-2">
@@ -126,7 +126,7 @@
         <table class="table" id="excel-table">
           <thead >
           <tr >
-            
+            <th><input scope="col"  type="checkbox">View</th>
             <th scope="col">Attachment Name</th>
             <th scope="col">Date/Time Approved</th>
             <th scope="col">Epic Agency Code</th>
@@ -140,14 +140,17 @@
             <th scope="col">Epic Lookup CD</th>
             <th scope="col">Client Name</th>
             <th scope="col">Send to CM Date</th>
-            <th scope="col">CM Reviwer Date</th>
+            <th scope="col">CM Reviewer Date</th>
             <th scope="col">CM Approved</th>
     
             
           </tr>
         </thead>
           <tbody>
-              <tr *ngFor="let x of this.item.$values">
+              
+              <tr  *ngFor="let x of this.item.$values">
+
+                  <td><input scope="row" type="checkbox"></td>
                   <td scope="row">{{x.attachment_name}}</td>
                   <td scope="row">{{x.datetime_approved}}</td>
                   <td scope="row">{{x.epic_agencycode}}</td>

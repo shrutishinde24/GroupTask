@@ -40,4 +40,8 @@ export class ClientApiService {
     return this.http.get(this.netapiUrl+`/api/Distribution/${invoice}/${clientname}`);
 
   }
+  getdistributioncount():Observable<any>{
+    return this.http.get(this.netapiUrl+`/api/Distribution`);
+  }
+
 }
