@@ -32,5 +32,6 @@ namespace BackendAPI.Models
         public DbSet<client_inv_del> client_Inv_Dels { get; set; }
         public DbSet<Glob> Globs { get; set; }
         public DbSet<Distribution> Distributions { get; set; }
+        public DbSet<BackendAPI.Models.Distrribution_count> Distrribution_count { get; set; }
     }
 }
